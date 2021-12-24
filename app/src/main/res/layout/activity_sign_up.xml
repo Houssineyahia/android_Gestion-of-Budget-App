@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Sign_Up"
+    android:background="@drawable/background"
+
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="124dp"
+        android:layout_height="152dp"
+        android:layout_marginLeft="140dp"
+        app:srcCompat="@drawable/logo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10px"
+        >
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:drawableStart="@drawable/ic_baseline_person"
+            android:drawablePadding="20dp"
+            android:padding="15dp"
+            android:background="@drawable/radius2"
+            />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:drawableStart="@drawable/ic_baseline_person"
+            android:drawablePadding="20dp"
+            android:padding="15dp"
+            android:background="@drawable/radius2"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="username"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_baseline_person"
+        android:drawablePadding="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius2"
+        />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Email@exemple.com"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_baseline_email"
+        android:drawablePadding="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius2"
+        />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="+212 ...."
+        android:drawableStart="@drawable/ic_baseline_local_phone"
+        android:drawablePadding="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius2"
+        />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Password"
+        android:drawableStart="@drawable/ic_baseline_lock"
+        android:drawablePadding="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius2"
+        />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Date of Birth"
+        android:drawableStart="@drawable/ic_baseline_date_range"
+        android:drawablePadding="20dp"
+        android:padding="15dp"
+        android:background="@drawable/radius2"
+        />
+
+    <Button
+        android:id="@+id/buttonj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/button_bg"
+        android:text="Join us"
+
+        />
+
+    <TextView
+        android:id="@+id/haveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:paddingTop="10dp"
+        android:text="Already have Account ? "
+        android:textAlignment="center"
+        android:textSize="25dp"
+
+        />
+
+</LinearLayout>

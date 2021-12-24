@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/authent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/radius2"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="20dp"
+        android:inputType="text"
+        android:padding="25dp"
+        android:hint=" username"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/passwd"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/radius2"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="20dp"
+        android:inputType="textPassword"
+        android:padding="25dp"
+        android:hint="Mot de passe"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/Connect_Btn"
+        android:layout_width="160dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/reset_passwds"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="122dp"
+        android:background="@drawable/radius"
+        android:text="log in"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/reset_passwds"
+        android:layout_width="181dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/authent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="200dp"
+        android:text="Password forgotten ?"
+        android:textColor="#1475D6"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/joinus"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@+id/authent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="451dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="-2dp"
+        android:text="You don't have account ? Join us !"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+      />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="22dp"
+        />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="406dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-24dp"
+        android:layout_marginTop="-277dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/violet"
+        android:rotation="-5" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="145dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/logo" />
+
+</RelativeLayout>
+
+
+
+

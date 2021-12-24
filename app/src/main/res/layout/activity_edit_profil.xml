@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfil"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="388dp"
+        android:layout_height="404dp"
+        android:background="@drawable/style_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="161dp"
+            android:layout_height="339dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.702"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/firstname"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:text="  First Name"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:text="  Last Name"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:text="  Username"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+                android:text="  Phone"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_age_123_24"
+                android:text="  Age"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/email"
+                android:text="  Email"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="336dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/style_layout"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+
+            <EditText
+                android:id="@+id/efirstnm5"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:hint="Last name"
+                android:background="@drawable/edit_text_style" />
+
+            <EditText
+                android:id="@+id/efirstnm4"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                android:hint="First name"
+                android:background="@drawable/edit_text_style" />
+
+            <EditText
+                android:id="@+id/efirstnm3"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="20dp"
+                android:hint="Username"
+                android:background="@drawable/edit_text_style" />
+
+            <EditText
+                android:id="@+id/efirstnm7"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:hint="Phone"
+                android:background="@drawable/edit_text_style" />
+
+
+            <EditText
+                android:id="@+id/efirstnm6"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:hint="Age"
+                android:background="@drawable/edit_text_style" />
+            <EditText
+                android:id="@+id/emailtext"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="20dp"
+                android:hint="Email"
+                android:background="@drawable/edit_text_style" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="101dp"
+        android:layout_height="40dp"
+        android:background="@drawable/style_button"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.854" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/violet"
+        app:itemIconTint="@color/icons_color"
+        app:itemRippleColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/navigation"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/dashboard"
+        android:icon="@drawable/dashboard"
+        android:title="My dashboard"
+        />
+
+    <item android:id="@+id/groups"
+        android:icon="@drawable/groups"
+        android:title="My groups"
+        />
+
+
+    <item android:id="@+id/profil"
+        android:icon="@drawable/profil"
+        android:title="My profil"
+        />
+
+    <item android:id="@+id/add"
+        android:icon="@drawable/add"
+        android:title="Add"
+        />
+
+</menu>

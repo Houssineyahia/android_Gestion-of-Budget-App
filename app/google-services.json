@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660125831138",
+    "project_id": "myaapgestionofbudget",
+    "storage_bucket": "myaapgestionofbudget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660125831138:android:fa3f2ade7dc1bc8f3db3bb",
+        "android_client_info": {
+          "package_name": "com.example.myaap_gestion_of_budget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660125831138-5cgdupr3u0o9qqebvbsgj1o7gr6j8d7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxOUl-9j3vMJUjCGpOUQSen0uggKx8Cfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660125831138-5cgdupr3u0o9qqebvbsgj1o7gr6j8d7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

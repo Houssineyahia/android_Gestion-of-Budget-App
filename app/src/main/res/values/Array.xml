@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Menu">
+        <item>Younes</item>
+        <item>Housein</item>
+        <item>MUSTAFA</item>
+        <item>ABDLTIFE </item>
+        <item>SAI</item>
+        <item>Stick</item>
+        <item>Menu</item>
+        <item>SSS</item>
+
+    </string-array>
+    <string-array name="prix">
+        <item>58 DH</item>
+        <item>20 DH</item>
+        <item>58 DH</item>
+        <item>20 DH</item>
+        <item>58 DH</item>
+        <item>20 DH</item>
+        <item>58 DH</item>
+        <item>20 DH</item>
+
+    </string-array>
+</resources>
