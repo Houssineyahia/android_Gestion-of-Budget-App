@@ -22,4 +22,19 @@
         <item>20 DH</item>
 
     </string-array>
+
+    <string-array name="GNames">
+        <item>group1</item>
+        <item>group2</item>
+        <item>group3</item>
+        <item>group4</item>
+    </string-array>
+
+    <string-array name="Creators">
+        <item>dt</item>
+        <item>dt</item>
+        <item>dt</item>
+        <item>dt</item>
+    </string-array>
+
 </resources>
