@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +28,9 @@ public class   Sign_Up extends AppCompatActivity  {
 
 
     DatabaseReference databasereference=FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+
+
+
 
 
     @Override
@@ -127,7 +131,33 @@ public class   Sign_Up extends AppCompatActivity  {
         }
         );
 
-    }}
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        checkSession();
+    }
+
+    private void checkSession() {
+        //check if user is logged in
+        //if user is logged in --> move to mainActivity
+
+        SessionManagement sessionManagement = new SessionManagement(Sign_Up.this);
+        String username = sessionManagement.getSession();
+
+        if(username.equals("none")){
+            //user id logged in and so move to mainActivity
+
+        }
+        else{
+            startActivity(new Intent(Sign_Up.this, Listegroup.class));
+
+        }
+    }
+
+}
 
 
 
