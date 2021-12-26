@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -47,7 +48,8 @@ public class Add__ extends AppCompatActivity {
         groupdescription = findViewById(R.id.editTextTextPersonName5);
         grouptype=findViewById(R.id.autoCompleteTextView) ;
         String Id = mDatabase.push().getKey();
-
+        SessionManagement sessionManagement=new SessionManagement(Add__.this) ;
+        String username= sessionManagement.getSession();
 
 
         buttonSave.setOnClickListener(v -> {
@@ -64,7 +66,7 @@ public class Add__ extends AppCompatActivity {
                 mDatabase.child(Id).child("Group Name").setValue(groupn);
                 mDatabase.child(Id).child("Description").setValue(des);
                 mDatabase.child(Id).child("Group Type").setValue(gtype);
-
+                mDatabase.child(Id).child("Group Admin").setValue(username);
 
                 Toast.makeText(Add__.this, "Group created !", Toast.LENGTH_SHORT).show();
 
