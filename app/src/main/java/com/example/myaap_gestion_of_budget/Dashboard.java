@@ -118,7 +118,7 @@ public class Dashboard extends AppCompatActivity  {
                         return true;
 
                     case R.id.groups:
-                        startActivity(new Intent(getApplicationContext(), Groups.class));
+                        startActivity(new Intent(getApplicationContext(), Listegroup.class));
                         overridePendingTransition(0,0);
 
                         return true;

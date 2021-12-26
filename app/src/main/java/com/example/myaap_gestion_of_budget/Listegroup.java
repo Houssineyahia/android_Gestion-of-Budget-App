@@ -10,10 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -51,8 +53,19 @@ public class Listegroup extends AppCompatActivity {
         ListView lv = (ListView) findViewById(R.id.mygroups);
         adapter = new GroupListeAdapter(this,liste);
         lv.setAdapter(adapter);
+        //+ button Click Event
+        FloatingActionButton addGroup = findViewById(R.id.floatingActionButton);
 
+        addGroup.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(),Add__.class));
 
+                    }
+                }
+        );
+        ////////////////////
         lv.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -60,7 +73,7 @@ public class Listegroup extends AppCompatActivity {
                         Object o = lv.getItemAtPosition(position);
                         String p = o.toString();
                         Toast.makeText(getApplicationContext(), "You have chosen the pen: " + " " + p, Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Listegroup.this , Dashboard.class));
+                        startActivity(new Intent(Listegroup.this , GroupActions.class));
 
 
                     }
