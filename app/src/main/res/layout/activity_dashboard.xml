@@ -8,15 +8,34 @@
     android:background="#E9EAE9"
     >
 
-    <View
-
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintBaseline_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-3dp"
+        android:layout_height="95dp"
+        app:layout_constraintBottom_toTopOf="@+id/thebigdiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        >
 
-        />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <Spinner
+            android:id="@+id/budgetspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/black"
+
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/thebigdiv"
