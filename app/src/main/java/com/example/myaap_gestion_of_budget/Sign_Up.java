@@ -142,8 +142,7 @@ public class   Sign_Up extends AppCompatActivity  {
 
     private void checkSession() {
         //check if user is logged in
-        //if user is logged in --> move to mainActivity
-
+        //if user is logged in --> move to LsiteGroup
         SessionManagement sessionManagement = new SessionManagement(Sign_Up.this);
         String username = sessionManagement.getSession();
 
