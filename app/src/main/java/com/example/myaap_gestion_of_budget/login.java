@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
+import com.example.myaap_gestion_of_budget.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,19 +41,13 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //email1 = findViewById(R.id.username);
-        //pswd = findViewById(R.id.passwd);
-        // Connect_Btn = findViewById(R.id.Connect_Btn);
-        // join=findViewById(R.id.joinus);
-        // mAuth = FirebaseAuth.getInstance();
-
-        //
-
         inputEmail = findViewById(R.id.username);
         inputPassword = findViewById(R.id.passwd);
         btnSignup = findViewById(R.id.Connect_Btn);
         btnLogin = findViewById(R.id.joinus);
         mAuth = FirebaseAuth.getInstance();
+
+
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +83,11 @@ public class login extends AppCompatActivity {
                                 final String getpassword = snapshot.child(userString).child("passwordString").getValue(String.class);
                                 if (getpassword.equals(password)) {
                                     Toast.makeText(login.this, "good", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(login.this, Dashboard.class));
+                                    startActivity(new Intent(login.this, Listegroup.class));
+                                    //1. login and save session
+                                    User user = new User(userString);
+                                    SessionManagement sessionManagement = new SessionManagement(login.this);
+                                    sessionManagement.saveSession(user);
 
                                 } else {
                                     Toast.makeText(login.this, "error", Toast.LENGTH_SHORT).show();
@@ -105,7 +105,33 @@ public class login extends AppCompatActivity {
                 }
             }
         });
-    }}
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        checkSession();
+    }
+
+    private void checkSession() {
+        //check if user is logged in
+        //if user is logged in --> move to mainActivity
+
+        SessionManagement sessionManagement = new SessionManagement(login.this);
+        String username = sessionManagement.getSession();
+
+        if(username.equals("none")){
+            //user id logged in and so move to mainActivity
+
+        }
+        else{
+            startActivity(new Intent(login.this, Listegroup.class));
+
+        }
+    }
+
+}
 
 
                //progressBar.setVisibility(View.VISIBLE);

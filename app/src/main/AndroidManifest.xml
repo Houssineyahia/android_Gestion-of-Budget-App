@@ -6,9 +6,9 @@
     <application
 
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAAP_GESTION_OF_BUDGET">
         <activity android:name=".Dashboard"
@@ -23,8 +23,11 @@
             android:name=".Add__"
             android:exported="true" />
         <activity
-            android:name=".Groups"
-            android:exported="true" />
+            android:name=".Listegroup"
+            android:exported="true"
+
+
+            />
         <activity
             android:name=".Profil"
             android:exported="true" />

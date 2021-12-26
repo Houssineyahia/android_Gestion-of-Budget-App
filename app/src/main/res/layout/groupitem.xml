@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.myaap_gestion_of_budget.Groupview
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/borderbottom"
+    >
+
+
+    <LinearLayout
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+            <TextView
+                android:id="@+id/GroupName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:text="TextView"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/creator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="23/10/2001"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:paddingTop="2dp"
+
+            android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+
+    </LinearLayout>
+
+
+</com.example.myaap_gestion_of_budget.Groupview>
