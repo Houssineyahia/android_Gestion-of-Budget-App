@@ -21,6 +21,7 @@ public class GroupListeAdapter  extends ArrayAdapter<GroupClass>{
     }
 
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
