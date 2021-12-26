@@ -30,11 +30,26 @@
         <item>group4</item>
     </string-array>
 
+    <string-array name="Groupids">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
     <string-array name="Creators">
         <item>dt</item>
         <item>dt</item>
         <item>dt</item>
         <item>dt</item>
+    </string-array>
+
+
+    <string-array name="budgetliste">
+        <item>budget1</item>
+        <item>budget2</item>
+        <item>budget3</item>
+        <item>budget4</item>
     </string-array>
 
 </resources>

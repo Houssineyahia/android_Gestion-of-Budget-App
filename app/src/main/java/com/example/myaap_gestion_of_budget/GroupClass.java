@@ -3,8 +3,16 @@ package com.example.myaap_gestion_of_budget;
 public class GroupClass {
     private String  groupName;
     private  String Creator ;
+    private  String Id ;
+
+    GroupClass(String nom , String creator , String Id){
+        this.groupName =nom ;
+        this.Creator = creator;
+        this.Id = Id;
+    }
 
     GroupClass(String nom , String creator){
+
         this.groupName =nom ;
         this.Creator = creator;
     }
@@ -25,8 +33,10 @@ public class GroupClass {
         return this.Creator;
     }
 
+    String getId() {return this.Id; }
+
     @Override
     public String toString() {
-        return ' ' + groupName;
+        return ' ' + this.Id;
     }
 }

@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,15 +26,21 @@ public class Listegroup extends AppCompatActivity {
         Resources res = getResources();
         final String[] libelles =  res.getStringArray(R.array.GNames);
         final String[] prix = res.getStringArray(R.array.Creators);
+        final String[] ids = res.getStringArray(R.array.Groupids);
         ArrayList<GroupClass> liste2;
         liste2 = new ArrayList<>();
         for (int i=0; i<libelles.length; ++i) {
-            liste2.add(new GroupClass(libelles[i], prix[i]));
+            liste2.add(new GroupClass(libelles[i], prix[i] , ids[i]));
         }
 
         return liste2;
 
     }
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +51,26 @@ public class Listegroup extends AppCompatActivity {
         ListView lv = (ListView) findViewById(R.id.mygroups);
         adapter = new GroupListeAdapter(this,liste);
         lv.setAdapter(adapter);
+
+
+        lv.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Object o = lv.getItemAtPosition(position);
+                        String p = o.toString();
+                        Toast.makeText(getApplicationContext(), "You have chosen the pen: " + " " + p, Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Listegroup.this , Dashboard.class));
+
+
+                    }
+                }
+        );
+
+
+
+
+
 
 
         //initiaize and assign variables
