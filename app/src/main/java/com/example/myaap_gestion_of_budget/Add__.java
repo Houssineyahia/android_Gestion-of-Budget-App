@@ -13,7 +13,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthSettings;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GithubAuthProvider;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.PlayGamesAuthProvider;
+import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.auth.UserProfileChangeRequest;
 public class Add__ extends AppCompatActivity {
 
     EditText Groupname;
@@ -27,7 +38,7 @@ public class Add__ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
         mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Button buttonSave = findViewById(R.id.button);
 
 
@@ -36,11 +47,10 @@ public class Add__ extends AppCompatActivity {
         groupdescription = findViewById(R.id.editTextTextPersonName5);
         grouptype=findViewById(R.id.autoCompleteTextView) ;
         String Id = mDatabase.push().getKey();
-        
+
 
 
         buttonSave.setOnClickListener(v -> {
-
 
             String groupn = Groupname.getText().toString();
             String des =  groupdescription.getText().toString();

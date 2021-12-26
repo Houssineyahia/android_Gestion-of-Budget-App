@@ -3,13 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_add.xml" value="0.23232323232323232" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_group_actions.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_groups.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_profil.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/add_group.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/activity_group_actions.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/activity_groups.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/activity_listegroup.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/custommenu.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/groupitem.xml" value="0.20104166666666667" />
       </map>
     </option>
   </component>
