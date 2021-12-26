@@ -30,7 +30,7 @@ public class login extends AppCompatActivity {
    // private FirebaseAuth mAuth;
     //private TextView join;
 
-    private EditText inputEmail, inputPassword;
+   public EditText inputEmail, inputPassword;
     private Button btnSignup;
     private FirebaseAuth mAuth;
     private TextView btnLogin;
