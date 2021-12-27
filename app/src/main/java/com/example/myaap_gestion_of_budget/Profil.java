@@ -18,7 +18,11 @@ public class Profil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+        
         this.toedit = findViewById(R.id.toedit);
+
+
+
 
 
 
@@ -29,6 +33,14 @@ public class Profil extends AppCompatActivity {
                 startActivity(otherActivity);
 
             }});
+
+
+
+
+
+
+
+
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -43,7 +55,7 @@ public class Profil extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
 

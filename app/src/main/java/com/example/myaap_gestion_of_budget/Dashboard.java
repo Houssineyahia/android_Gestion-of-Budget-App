@@ -86,10 +86,6 @@ public class Dashboard extends AppCompatActivity  {
         );
 
 
-
-
-
-
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myaap_gestion_of_budget">
 <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -23,16 +24,20 @@
             android:name=".Add__"
             android:exported="true" />
         <activity
+            android:name=".addBudget"
+            android:exported="true"
+            tools:ignore="DuplicateActivity" />
+        <activity
             android:name=".Start"
             android:exported="true"
 
 
             />
+
         <activity
             android:name=".Profil"
             android:exported="true" />
         <activity android:name=".GroupActions" android:exported="true" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".Sign_Up" />
         <activity android:name=".login" />
         <activity
