@@ -32,7 +32,7 @@
             android:name=".Profil"
             android:exported="true" />
         <activity android:name=".GroupActions" android:exported="true" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivit" />
         <activity android:name=".Sign_Up" />
         <activity android:name=".login" />
         <activity

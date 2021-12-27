@@ -1,6 +1,7 @@
 package com.example.myaap_gestion_of_budget;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(MainActivity.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show();
 /*
         //initiaize and assign variables
 

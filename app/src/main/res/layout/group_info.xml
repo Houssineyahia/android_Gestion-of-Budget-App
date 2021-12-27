@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="709dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:orientation="horizontal">
+
+            <SearchView
+
+
+                android:id="@+id/searchgrou"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="05px"
+                android:layout_marginTop="0px"
+                android:background="@drawable/rectangle"
+                android:elevation="5dp"
+                android:hint="ID group"
+                android:queryHint=" Id group">
+
+            </SearchView>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25px"
+                android:layout_weight="1"
+                android:maxWidth="2dp"
+                android:paddingLeft="11dp"
+                android:text="Search" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="440dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="95px"
+            android:layout_marginTop="140px"
+            android:layout_marginRight="130px"
+            android:background="@drawable/rectangle1"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginTop="60px"
+                app:srcCompat="@drawable/testt" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="230dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="120px"
+                android:layout_marginTop="30px"
+                android:fontFamily="sans-serif-light"
+                android:text="   Group Name "
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#1C263A"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="291dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="80px"
+                android:layout_marginTop="30px"
+                android:fontFamily="sans-serif-light"
+                android:text=" ID         : 12222"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#1C263A"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="282dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="80px"
+                android:layout_marginTop="30px"
+                android:fontFamily="sans-serif-light"
+                android:text=" Admin :  Said ait mbarek "
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#1C263A"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="245px"
+                android:layout_marginTop="15px"
+                android:text="Join" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
