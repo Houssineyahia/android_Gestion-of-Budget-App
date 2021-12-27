@@ -21,6 +21,7 @@ public class MainActivit extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 Toast.makeText(MainActivit.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show();
                 openActivity2();
