@@ -64,7 +64,7 @@ public class Edit_Passwd extends Activity {
                             if (password_Strg.equals(CurrPasswd)) {
                                 if ((NewPasswd).equals(ConfNewPasswd)) {
 
-                                    databasereference.child("users").child("passwordString").setValue(NewPasswd);
+                                    databasereference.child("users").child(username).child("passwordString").setValue(NewPasswd);
 
                                 } else {
                                     Toast.makeText(Edit_Passwd.this, " Passwords don't match", Toast.LENGTH_SHORT).show();
