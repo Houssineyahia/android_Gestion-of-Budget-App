@@ -131,7 +131,7 @@ public class addBudget extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set dashboard select
 
-        bottomNavigationView.setSelectedItemId(R.id.groups);
+        bottomNavigationView.setSelectedItemId(R.id.add);
 
         //perform ItemSelectListener
 
@@ -140,11 +140,14 @@ public class addBudget extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
+                        Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profil:
+                        startActivity(new Intent(getApplicationContext(),Profil.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.add:

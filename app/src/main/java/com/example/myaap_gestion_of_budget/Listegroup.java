@@ -27,12 +27,12 @@ public class Listegroup extends AppCompatActivity {
     public ArrayList<GroupClass> initData(){
         Resources res = getResources();
         final String[] libelles =  res.getStringArray(R.array.GNames);
-        final String[] prix = res.getStringArray(R.array.Creators);
+        final String[] Creatore_name = res.getStringArray(R.array.Creators);
         final String[] ids = res.getStringArray(R.array.Groupids);
         ArrayList<GroupClass> liste2;
         liste2 = new ArrayList<>();
         for (int i=0; i<libelles.length; ++i) {
-            liste2.add(new GroupClass(libelles[i], prix[i] , ids[i]));
+            liste2.add(new GroupClass(libelles[i], Creatore_name[i] , ids[i]));
         }
 
         return liste2;
@@ -73,7 +73,9 @@ public class Listegroup extends AppCompatActivity {
                         Object o = lv.getItemAtPosition(position);
                         String p = o.toString();
                         Toast.makeText(getApplicationContext(), "You have chosen the pen: " + " " + p, Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Listegroup.this , GroupActions.class));
+                        Intent Action = new Intent(Listegroup.this , GroupActions.class);
+                        Action.putExtra("GroupId" , p);
+                        startActivity(Action);
 
 
                     }
