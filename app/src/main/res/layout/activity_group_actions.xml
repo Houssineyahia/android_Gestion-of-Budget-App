@@ -144,7 +144,7 @@
             />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button4"
+            android:id="@+id/toaddbudget"
             android:layout_width="313dp"
             android:layout_height="67dp"
             android:background="@drawable/radius2"

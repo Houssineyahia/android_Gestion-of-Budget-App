@@ -11,12 +11,13 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="95dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/thebigdiv"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        >
+        app:layout_constraintVertical_bias="0.0">
 
 
         <DatePicker
@@ -30,8 +31,8 @@
             android:id="@+id/budgetspinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:background="@color/black"
+            android:gravity="center"
 
             />
 
