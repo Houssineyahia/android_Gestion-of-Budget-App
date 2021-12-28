@@ -7,22 +7,34 @@
     tools:context=".EditProfil"
     android:background="@color/white">
 
+    <TextView
+        android:layout_width="268dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:text="Update your profile"
+        android:textColor="@color/purple_200"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="388dp"
-        android:layout_height="404dp"
+        android:layout_width="400dp"
+        android:layout_height="508dp"
         android:background="@drawable/style_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286"
+        app:layout_constraintVertical_bias="0.367"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="161dp"
-            android:layout_height="339dp"
+            android:layout_width="171dp"
+            android:layout_height="419dp"
             android:layout_marginTop="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,18 +72,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
-                android:text="  Username"
-                android:textColor="@color/black"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,16 +90,29 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:drawableLeft="@drawable/ic_age_123_24"
-                android:text="  Age"
+                android:text="New password"
                 android:textColor="@color/black"
                 android:textSize="17dp"
                 android:textStyle="bold" />
+
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/Passwd_Conf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_age_123_24"
+                android:text="  Password Confirmation"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="92dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
                 android:drawableLeft="@drawable/email"
                 android:text="  Email"
                 android:textColor="@color/black"
@@ -109,8 +122,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="205dp"
-            android:layout_height="336dp"
+            android:layout_width="213dp"
+            android:layout_height="432dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/style_layout"
@@ -126,10 +139,10 @@
                 android:id="@+id/efirstnm5"
                 android:layout_width="200dp"
                 android:layout_height="42dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:hint="Last name"
-                android:background="@drawable/edit_text_style" />
+                android:background="@drawable/edit_text_style"
+                android:hint="Last name" />
 
             <EditText
                 android:id="@+id/efirstnm4"
@@ -137,17 +150,8 @@
                 android:layout_height="42dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="20dp"
-                android:hint="First name"
-                android:background="@drawable/edit_text_style" />
-
-            <EditText
-                android:id="@+id/efirstnm3"
-                android:layout_width="200dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginRight="20dp"
-                android:hint="Username"
-                android:background="@drawable/edit_text_style" />
+                android:background="@drawable/edit_text_style"
+                android:hint="First name" />
 
             <EditText
                 android:id="@+id/efirstnm7"
@@ -155,8 +159,8 @@
                 android:layout_height="42dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
-                android:hint="Phone"
-                android:background="@drawable/edit_text_style" />
+                android:background="@drawable/edit_text_style"
+                android:hint="Phone" />
 
 
             <EditText
@@ -165,16 +169,26 @@
                 android:layout_height="42dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:hint="Age"
-                android:background="@drawable/edit_text_style" />
+                android:background="@drawable/edit_text_style"
+                android:hint="New password" />
+
+            <EditText
+                android:id="@+id/efirstnm6"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Confirmation" />
+
             <EditText
                 android:id="@+id/emailtext"
                 android:layout_width="200dp"
                 android:layout_height="42dp"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Email"
-                android:background="@drawable/edit_text_style" />
+                android:background="@drawable/edit_text_style"
+                android:hint="Email" />
 
 
         </LinearLayout>
@@ -194,7 +208,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

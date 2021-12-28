@@ -21,11 +21,6 @@ public class Profil extends AppCompatActivity {
         
         this.toedit = findViewById(R.id.toedit);
 
-
-
-
-
-
         toedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,10 +28,6 @@ public class Profil extends AppCompatActivity {
                 startActivity(otherActivity);
 
             }});
-
-
-
-
 
 
 

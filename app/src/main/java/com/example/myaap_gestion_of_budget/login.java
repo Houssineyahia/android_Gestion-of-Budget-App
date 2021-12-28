@@ -73,7 +73,7 @@ public class login extends AppCompatActivity {
                 String password = inputPassword.getText().toString();
 
                 if (TextUtils.isEmpty(userString) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "please fill all fields!", Toast.LENGTH_SHORT).show();
 
                 } else {
                     databasereference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
