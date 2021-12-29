@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Groupinfo"
     >
 
 
@@ -21,7 +22,7 @@
             android:layout_height="63dp"
             android:orientation="horizontal">
 
-            <SearchView
+            <EditText
 
 
                 android:id="@+id/searchgrou"
@@ -31,10 +32,10 @@
                 android:layout_marginTop="0px"
                 android:background="@drawable/rectangle"
                 android:elevation="5dp"
-                android:hint="ID group"
-                android:queryHint=" Id group">
+                android:hint="    ID group"
+                android:queryHint=" Id group"
 
-            </SearchView>
+            />
 
             <Button
                 android:id="@+id/button"
@@ -78,7 +79,7 @@
                 android:layout_marginLeft="120px"
                 android:layout_marginTop="30px"
                 android:fontFamily="sans-serif-light"
-                android:text="   Group Name "
+
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#1C263A"
                 android:textSize="34sp"
@@ -91,7 +92,7 @@
                 android:layout_marginLeft="80px"
                 android:layout_marginTop="30px"
                 android:fontFamily="sans-serif-light"
-                android:text=" ID         : 12222"
+
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#1C263A"
                 android:textSize="24sp"
@@ -104,7 +105,7 @@
                 android:layout_marginLeft="80px"
                 android:layout_marginTop="30px"
                 android:fontFamily="sans-serif-light"
-                android:text=" Admin :  Said ait mbarek "
+
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#1C263A"
                 android:textSize="24sp"
