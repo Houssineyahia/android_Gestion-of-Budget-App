@@ -1,42 +1,50 @@
 package com.example.myaap_gestion_of_budget;
 
 public class GroupClass {
-    private String  groupName;
-    private  String Creator ;
-    private  String Id ;
 
-    GroupClass(String nom , String creator , String Id){
-        this.groupName =nom ;
-        this.Creator = creator;
-        this.Id = Id;
+    String Id , Admin , Title , Description ;
+
+
+    public  GroupClass(){
+
     }
 
-    GroupClass(String nom , String creator){
-
-        this.groupName =nom ;
-        this.Creator = creator;
+    public GroupClass(String title,String admin, String id, String description) {
+        Id = id;
+        Admin = admin;
+        Title = title;
+        Description = description;
     }
 
-    void setgroupName(String groupName){
-        this.groupName = groupName;
+    public String getId() {
+        return Id;
     }
 
-    void setCreator(String Creator){
-        this.Creator = Creator;
+    public void setId(String id) {
+        Id = id;
     }
 
-    String getgroupName(){
-        return this.groupName;
+    public String getAdmin() {
+        return Admin;
     }
 
-    String getCreator(){
-        return this.Creator;
+    public void setAdmin(String admin) {
+        Admin = admin;
     }
 
-    String getId() {return this.Id; }
+    public String getTitle() {
+        return Title;
+    }
 
-    @Override
-    public String toString() {
-        return ' ' + this.Id;
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }
