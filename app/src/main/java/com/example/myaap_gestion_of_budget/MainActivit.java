@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,10 +25,16 @@ public class MainActivit extends AppCompatActivity {
     private Button button1;
     EditText searches;
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    TextView groupname ;
+    TextView admin ;
+    TextView Idd ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.group_info);
+        groupname = findViewById(R.id.textView4);
+        admin = findViewById(R.id.textView);
+        Idd = findViewById(R.id.textView2);
         button = (Button) findViewById(R.id.button);
         searches = findViewById(R.id.searchgrou);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
@@ -42,8 +49,6 @@ public class MainActivit extends AppCompatActivity {
 
                 if(sear.isEmpty()) {
                 Toast.makeText(MainActivit.this, "Please fill the fields ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivit.this, Groupinfo.class);
-                    startActivity(intent);
                 }
                 else
 
@@ -56,11 +61,17 @@ public class MainActivit extends AppCompatActivity {
                             String GroupName = dataSnapshot.child(sear).child("Group Name").getValue(String.class);
                             String id = dataSnapshot.child(sear).child("Id").getValue(String.class);
                             String GroupAdmin = dataSnapshot.child(sear).child("Group Admin").getValue(String.class);
-                            Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
+                            Toast.makeText(MainActivit.this, GroupName, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivit.this, id, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivit.this, GroupAdmin, Toast.LENGTH_SHORT).show();
+                            groupname.setText(GroupName);
+                            admin.setText(GroupAdmin);
+                            Idd.setText(id);
+                          /*  Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
                             intent.putExtra("Group Name", GroupName);
                             intent.putExtra("Id", id);
                             intent.putExtra("Group Admin", GroupAdmin);
-                            startActivity(intent);
+                            startActivity(intent);*/
 
                         } else {
                             Toast.makeText(MainActivit.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show();
