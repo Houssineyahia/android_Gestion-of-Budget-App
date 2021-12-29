@@ -31,7 +31,12 @@
             android:name=".Listegroup"
             android:exported="true"
             />
-
+        <activity
+            android:name=".MainActivit"
+            android:exported="true" />
+        <activity
+            android:name=".Groupinfo"
+            android:exported="true" />
         <activity
             android:name=".Profil"
             android:exported="true" />

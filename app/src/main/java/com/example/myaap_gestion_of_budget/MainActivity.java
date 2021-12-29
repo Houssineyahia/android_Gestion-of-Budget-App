@@ -1,40 +1,25 @@
 package com.example.myaap_gestion_of_budget;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-public class Profil extends AppCompatActivity {
-    private Button toedit;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profil);
-        this.toedit = findViewById(R.id.toedit);
+        setContentView(R.layout.activity_main);
 
-
-
-        toedit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent otherActivity =  new Intent(getApplicationContext(),  EditProfil.class);
-                startActivity(otherActivity);
-
-            }});
+        Toast.makeText(MainActivity.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show();
+/*
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set dashboard select
 
-        bottomNavigationView.setSelectedItemId(R.id.profil);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
 
         //perform ItemSelectListener
 
@@ -43,11 +28,12 @@ public class Profil extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+
                         return true;
 
                     case R.id.profil:
+                        startActivity(new Intent(getApplicationContext(),Profil.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.add:
@@ -56,14 +42,18 @@ public class Profil extends AppCompatActivity {
                         return true;
 
                     case R.id.groups:
-                        startActivity(new Intent(getApplicationContext(),Listegroup.class));
+                        startActivity(new Intent(getApplicationContext(),Groups.class));
                         overridePendingTransition(0,0);
+
                         return true;
                 }
                 return false;
             }
 
 
-        });
+        });*/
     }
-}
+
+    }
+
+

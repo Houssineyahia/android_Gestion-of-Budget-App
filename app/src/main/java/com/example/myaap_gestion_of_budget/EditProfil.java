@@ -16,6 +16,7 @@ public class EditProfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profil);
 
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set dashboard select
 
@@ -28,7 +29,7 @@ public class EditProfil extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        startActivity(new Intent(getApplicationContext(), MainActivit.class));
                         overridePendingTransition(0,0);
                         return true;
 

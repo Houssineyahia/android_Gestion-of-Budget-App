@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivit"
+    >
+
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="709dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <LinearLayout
+            android:layout_width="395dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal">
+
+            <EditText
+
+
+                android:id="@+id/searchgrou"
+                android:layout_width="301dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="05px"
+                android:layout_marginTop="10px"
+                android:background="@drawable/rectangle"
+                android:elevation="5dp"
+                android:hint="    ID group"
+                android:paddingLeft="30px"
+
+                android:queryHint=" Id group" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25px"
+                android:layout_weight="1"
+                android:maxWidth="2dp"
+                android:paddingLeft="11dp"
+                android:text="Search"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="440dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="95px"
+            android:layout_marginTop="140px"
+            android:layout_marginRight="130px"
+            android:background="@drawable/rectangle1"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginTop="60px"
+                app:srcCompat="@drawable/testt" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="150dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="240px"
+                android:layout_marginTop="30px"
+                android:fontFamily="sans-serif-light"
+
+                android:text="Null"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#2D4980"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="302dp"
+                android:layout_height="66dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="70px"
+                    android:layout_marginTop="36px"
+
+                    android:layout_weight="1"
+
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="30px"
+                    android:paddingTop="20px"
+                    android:text="Admin :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#F44336"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="175dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="37px"
+
+                    android:layout_marginRight="30px"
+
+                    android:layout_marginBottom="100px"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Null"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#151D2E"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="302dp"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="80px"
+                    android:layout_marginTop="0px"
+                    android:layout_weight="1"
+
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="20px"
+                    android:text="ID         :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#F44336"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="180dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="20px"
+
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Null"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#1C263A"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="245px"
+                android:layout_marginTop="15px"
+                android:text="Join" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
