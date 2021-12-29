@@ -30,8 +30,8 @@ public class Groupinfo extends AppCompatActivity {
         setContentView(R.layout.group_info);
         button1 = (Button) findViewById(R.id.button1);
         groupname = findViewById(R.id.textView4);
-        admin = findViewById(R.id.textView4);
-        id = findViewById(R.id.textView4);
+        admin = findViewById(R.id.textView);
+        id = findViewById(R.id.textView2);
         showgroupdata();
     }
 

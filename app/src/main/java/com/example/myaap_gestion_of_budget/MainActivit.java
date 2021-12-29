@@ -31,10 +31,11 @@ public class MainActivit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.group_info);
-        groupname = findViewById(R.id.textView4);
+        setContentView(R.layout.activity_main);
+      /*  groupname = findViewById(R.id.textView4);
         admin = findViewById(R.id.textView);
-        Idd = findViewById(R.id.textView2);
+        Idd = findViewById(R.id.textView2);*/
+
         button = (Button) findViewById(R.id.button);
         searches = findViewById(R.id.searchgrou);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
@@ -61,17 +62,15 @@ public class MainActivit extends AppCompatActivity {
                             String GroupName = dataSnapshot.child(sear).child("Group Name").getValue(String.class);
                             String id = dataSnapshot.child(sear).child("Id").getValue(String.class);
                             String GroupAdmin = dataSnapshot.child(sear).child("Group Admin").getValue(String.class);
-                            Toast.makeText(MainActivit.this, GroupName, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivit.this, id, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivit.this, GroupAdmin, Toast.LENGTH_SHORT).show();
-                            groupname.setText(GroupName);
+                            openActivity2( GroupName,  id ,GroupAdmin );
+                           /* groupname.setText(GroupName);
                             admin.setText(GroupAdmin);
                             Idd.setText(id);
-                          /*  Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
+                          Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
                             intent.putExtra("Group Name", GroupName);
                             intent.putExtra("Id", id);
                             intent.putExtra("Group Admin", GroupAdmin);
-                            startActivity(intent);*/
+                           startActivity(intent);*/
 
                         } else {
                             Toast.makeText(MainActivit.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show();
@@ -93,9 +92,15 @@ public class MainActivit extends AppCompatActivity {
         } }) ;
     }
 
-    public void openActivity2() {
+    public void openActivity2(String GroupName, String id , String GroupAdmin ) {
         setContentView(R.layout.group_info);
         button1 = (Button) findViewById(R.id.button1);
+        groupname = findViewById(R.id.textView4);
+        admin = findViewById(R.id.textView);
+        Idd = findViewById(R.id.textView2);
+        groupname.setText(GroupName);
+        admin.setText(GroupAdmin);
+        Idd.setText(id);
 
     }
 
