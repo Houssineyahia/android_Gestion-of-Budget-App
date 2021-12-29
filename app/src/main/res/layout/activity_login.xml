@@ -35,9 +35,9 @@
         android:background="@drawable/radius2"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
+        android:hint=" username"
         android:inputType="text"
         android:padding="25dp"
-        android:hint=" username"
         android:textColor="@color/black" />
 
     <EditText

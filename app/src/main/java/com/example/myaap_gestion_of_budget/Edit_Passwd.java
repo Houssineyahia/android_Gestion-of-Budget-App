@@ -8,25 +8,33 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Edit_Passwd extends Activity {
+import java.util.HashMap;
+
+public class Edit_Passwd extends AppCompatActivity {
 
     public EditText Curr_passwd, New_passwd, Conf_new_passwd;
     private Button Edit_passwd_btn;
     private FirebaseAuth mAuth;
-    DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    private FirebaseUser mFirebaseUser;
+    private TextView textView;
+
+    DatabaseReference DBRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
 
 
     @Override
@@ -36,13 +44,73 @@ public class Edit_Passwd extends Activity {
 
         Curr_passwd = findViewById(R.id.Curr_passwd);
         New_passwd = findViewById(R.id.New_Passwd);
+
         Conf_new_passwd = findViewById(R.id.Conf_new_passwd);
         Edit_passwd_btn = findViewById(R.id.Edit_passwd_btn);
+        textView = findViewById(R.id.TextV1);
         mAuth = FirebaseAuth.getInstance();
-        SessionManagement sessionManagement=new SessionManagement(Edit_Passwd.this) ;
-        String username= sessionManagement.getSession();
+      SessionManagement sessionManagement=new SessionManagement(Edit_Passwd.this) ;
+        String username = sessionManagement.getSession();
+           //String username1="jamal";
+
+        DBRef = FirebaseDatabase.getInstance().getReference().child("users").child(username).child("passwordString");
 
 
+        Edit_passwd_btn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               String CurrPasswd = Curr_passwd.getText().toString();
+               String NewPasswd = New_passwd.getText().toString();
+               String ConfNewPasswd = Conf_new_passwd.getText().toString();
+
+               DBRef.addValueEventListener(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        String password_db = snapshot.getValue().toString();
+                        textView.setText(password_db);
+
+
+
+                        if (TextUtils.isEmpty(CurrPasswd) || TextUtils.isEmpty(NewPasswd) || TextUtils.isEmpty(ConfNewPasswd)) {
+                            Toast.makeText(getApplicationContext(), "Your password won't be changed ,please fill all fields !", Toast.LENGTH_SHORT).show();
+
+                            //Current passwd is correct olla oho !!?
+                        } else if ( !(password_db.equals(CurrPasswd)) ) {
+                            Toast.makeText(Edit_Passwd.this, "Your current password is not correct !", Toast.LENGTH_SHORT).show();  }
+
+                           else if (!(NewPasswd.equals(ConfNewPasswd))) {
+
+                                Toast.makeText(Edit_Passwd.this, " Passwords don't match", Toast.LENGTH_SHORT).show();
+                            }
+
+                            else {
+                             DatabaseReference DBRef2 = FirebaseDatabase.getInstance().getReference().child("users").child(username);
+                            HashMap MyHashMap = new HashMap();
+                            MyHashMap.put("passwordString",NewPasswd);
+
+                            DBRef2.updateChildren(MyHashMap);
+                            Toast.makeText(Edit_Passwd.this, " ikhessa adak nsbadel lcode ghila ..awa sber 3afak  yat s yat", Toast.LENGTH_SHORT).show();
+
+
+
+                            }
+
+
+                    }
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
+
+           }
+       });
+
+ /*
         Edit_passwd_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,39 +118,46 @@ public class Edit_Passwd extends Activity {
                 String NewPasswd = New_passwd.getText().toString();
                 String ConfNewPasswd = Conf_new_passwd.getText().toString();
 
-                if (TextUtils.isEmpty(CurrPasswd) || TextUtils.isEmpty(NewPasswd) || TextUtils.isEmpty(ConfNewPasswd)) {
-                    Toast.makeText(getApplicationContext(), "Your password won't be changed ,please fill all fields !", Toast.LENGTH_SHORT).show();
-                    //Current passwd is correct olla oho !!?
-                }
+
+                databasereference.
 
 
                 databasereference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.hasChild(username)) {
-                            final String password_Strg = snapshot.child("users").child("passwordString").getValue(String.class);
-                            if (password_Strg.equals(CurrPasswd)) {
-                                if ((NewPasswd).equals(ConfNewPasswd)) {
 
-                                    databasereference.child("users").child(username).child("passwordString").setValue(NewPasswd);
+                            if (snapshot.hasChild(username1)) {
+                                final String password_Strg = snapshot.child("users").child("passwordString").getValue(String.class);
 
-                                } else {
-                                    Toast.makeText(Edit_Passwd.this, " Passwords don't match", Toast.LENGTH_SHORT).show();
+                                if (TextUtils.isEmpty(CurrPasswd) || TextUtils.isEmpty(NewPasswd) || TextUtils.isEmpty(ConfNewPasswd)) {
+                                    Toast.makeText(getApplicationContext(), "Your password won't be changed ,please fill all fields !", Toast.LENGTH_SHORT).show();
+
+                                    //Current passwd is correct olla oho !!?
+                                } else if ( !(password_Strg.equals(CurrPasswd)) ) {
+                                    Toast.makeText(Edit_Passwd.this, "Your current password is not correct !", Toast.LENGTH_SHORT).show();
+
+                                 if (!(NewPasswd.equals(ConfNewPasswd))) {
+
+                                        Toast.makeText(Edit_Passwd.this, " Passwords don't match", Toast.LENGTH_SHORT).show(); }
+
+                                       else {
+
+                                     mFirebaseUser.updatePassword(NewPasswd);
+
+                                                        Toast.makeText(Edit_Passwd.this, " Safi it's done", Toast.LENGTH_SHORT).show();
+                                                        startActivity(new Intent(Edit_Passwd.this, Profil.class));
+                                    }
                                 }
-                            } else {
-                                Toast.makeText(Edit_Passwd.this, "Your current password is not correct !", Toast.LENGTH_SHORT).show();
                             }
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                    }
-                });
-            }
-        });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    }); */
+                }
 
-    }
 
-}
+        }
+
 

@@ -29,7 +29,7 @@ public class Profil extends AppCompatActivity {
         toedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent otherActivity =  new Intent(getApplicationContext(),  EditProfil.class);
+                Intent otherActivity =  new Intent(getApplicationContext(),  Edit_Passwd.class);
                 startActivity(otherActivity);
 
             }});

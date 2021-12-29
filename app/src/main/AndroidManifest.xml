@@ -21,6 +21,9 @@
             android:name=".addBudget"
             android:exported="true" />
         <activity
+            android:name=".Listegroup"
+            android:exported="false" />
+        <activity
             android:name=".EditProfil"
             android:exported="true" />
         <activity
@@ -38,13 +41,13 @@
             />
 
         <activity
-            android:name=".Profil"
+            android:name=".Edit_Passwd"
             android:exported="true" />
         <activity android:name=".GroupActions" android:exported="true" />
         <activity android:name=".Sign_Up" />
-        <activity android:name=".login" />
+        <activity android:name=".Profil" />
         <activity
-            android:name=".Edit_Passwd"
+            android:name=".login"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
