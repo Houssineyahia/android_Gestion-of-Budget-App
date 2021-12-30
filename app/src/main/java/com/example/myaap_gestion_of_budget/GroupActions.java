@@ -1,10 +1,14 @@
 package com.example.myaap_gestion_of_budget;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +25,7 @@ public class GroupActions extends AppCompatActivity {
     DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     private  String groupid ;
     private String Groupname;
+    private ImageButton copyid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,9 +65,21 @@ public class GroupActions extends AppCompatActivity {
         });
 
 
+        copyid = (ImageButton) findViewById(R.id.copyId);
+
+        copyid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText(
+                        "text label", // What should I set for this "label"?
+                        groupid);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(GroupActions.this, "Saved to clip board", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        
 
         addBudgetB.setOnClickListener(new View.OnClickListener() {
             @Override

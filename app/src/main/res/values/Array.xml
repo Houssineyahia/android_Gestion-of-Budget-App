@@ -52,4 +52,13 @@
         <item>budget4</item>
     </string-array>
 
+
+    <string-array name="datepick">
+        <item>Today</item>
+        <item>Yestrday</item>
+        <item>Last 7 days</item>
+        <item>Mount</item>
+        <item>All</item>
+    </string-array>
+
 </resources>

@@ -6,10 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Add_group">
-
-
-
+    tools:context=".Add_group"
+    android:background="@color/white"
+    >
 
 
 
@@ -33,52 +32,11 @@
         android:textStyle="bold"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:paddingBottom="10px"
-        >
 
 
-        <EditText
-            android:id="@+id/editTextTextPersonName4"
-            android:layout_width="328dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/radius2"
-            android:drawablePadding="20dp"
-            android:ems="10"
-            android:hint="Group name"
-            android:inputType="textPersonName"
-            android:padding="15dp" />
-    </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="328dp"
-        android:layout_height="89dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/radius2"
-        android:drawablePadding="20dp"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        android:padding="15dp" />
 
-    <EditText
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="328dp"
-        android:layout_height="89dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/radius2"
-        android:drawablePadding="20dp"
-        android:hint="Group type : G or I "
-        android:inputType="textPersonName"
-        android:padding="15dp" />
+
 
 
     <Button
