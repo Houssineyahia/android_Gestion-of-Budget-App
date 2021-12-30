@@ -158,7 +158,7 @@
             android:layout_margin="20dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button5"
+            android:id="@+id/deleteg"
             android:layout_width="261dp"
             android:layout_height="47dp"
             android:background="@color/reed"
