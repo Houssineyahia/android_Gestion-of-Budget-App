@@ -20,6 +20,7 @@ public class GroupActions extends AppCompatActivity {
     private  Intent intent = getIntent();
     DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     private  String groupid ;
+    private String Groupname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class GroupActions extends AppCompatActivity {
         AgroupId.setText(getIntent().getStringExtra("GroupId"));
         groupid = getIntent().getStringExtra("GroupId");
 
+
         databasereference.child("Groups").child(groupid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -42,7 +44,7 @@ public class GroupActions extends AppCompatActivity {
                 Gdesc.setText(snapshot.child("Description").getValue().toString());
                 gtype.setText(snapshot.child("Group Type").getValue().toString());
                 title.setText(snapshot.child("Group Name").getValue().toString());
-
+                Groupname = snapshot.child("Group Name").getValue().toString();
                 if(snapshot.child("Group Type").getValue().toString().equals("i")){
                     gtype.setText("Indevidual");
                 }else{
@@ -67,6 +69,7 @@ public class GroupActions extends AppCompatActivity {
             public void onClick(View view) {
                 Intent otherActivity =  new Intent(getApplicationContext(),  addBudget.class);
                 otherActivity.putExtra("groupid" , groupid);
+                otherActivity.putExtra("groupname" , Groupname);
                 startActivity(otherActivity);
 
             }});

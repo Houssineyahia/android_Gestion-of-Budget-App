@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,14 +33,20 @@ public class addBudget extends AppCompatActivity {
     EditText end_Date;
     EditText start_Date;
     EditText Amount;
+    TextView groupname;
         // connection with database
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
-
+    private  Intent intent = getIntent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_budget);
+        groupname = findViewById(R.id.namegroup);
+
+        groupname.setText(getIntent().getStringExtra("groupname"));
+        //groupname.setText("groupname");
+
         mDatabase = FirebaseDatabase.getInstance().getReference("Budget");
         Button add__budget = findViewById(R.id.add__Budget);
 
@@ -75,6 +82,7 @@ public class addBudget extends AppCompatActivity {
             }else {
 
                 mDatabase.child(Id).child("Id").setValue(Id);
+                mDatabase.child(Id).child("Group").setValue(getIntent().getStringExtra("groupid"));
                 mDatabase.child(Id).child("Amount").setValue(titleD);
                 mDatabase.child(Id).child("Start date").setValue(startDate);
                 mDatabase.child(Id).child("End date").setValue(endDate);
