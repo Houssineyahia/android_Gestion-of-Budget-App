@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Groupinfo extends AppCompatActivity {
     private Button button1;
-    private ImageButton imageButton2;
+    private ImageButton button3;
     EditText searches;
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     TextView groupname ;
@@ -31,15 +31,21 @@ public class Groupinfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.group_info);
         button1 = (Button) findViewById(R.id.button1);
-        imageButton2=  findViewById(R.id.imageButton2);
+        groupname = findViewById(R.id.textView4);
+        admin = findViewById(R.id.textView);
+        Idd = findViewById(R.id.textView2);
+        button3 = findViewById(R.id.imageButton4);
+        searches = findViewById(R.id.searchgrou);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
             showgroupdata();
-        imageButton2.setOnClickListener(new View.OnClickListener() {
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(), MainActivit.class);
                 startActivity(intent);
             }
         });
+
 
     }
 
