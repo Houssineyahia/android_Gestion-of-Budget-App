@@ -107,8 +107,6 @@ public class GroupActions extends AppCompatActivity {
                 Intent otherActivity =  new Intent(getApplicationContext(),  Dashboard.class);
                 otherActivity.putExtra("groupid" , groupid);
                 startActivity(otherActivity);
-
-
             }
         });
 

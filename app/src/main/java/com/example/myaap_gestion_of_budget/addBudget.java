@@ -131,6 +131,9 @@ public class addBudget extends AppCompatActivity {
                         },year,month,day);
                         datePickerDialog.show();
 
+                    }});
+
+            }});
 
 
 
@@ -172,9 +175,10 @@ public class addBudget extends AppCompatActivity {
             }
 
 
-            });
-         }});
-
- }});
-    }
+            });}
 }
+
+
+
+
+
