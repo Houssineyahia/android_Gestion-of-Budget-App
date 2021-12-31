@@ -24,7 +24,10 @@
             android:name=".Listegroup"
             android:exported="false" />
         <activity
-            android:name=".EditProfil"
+            android:name=".Edit_Passwd"
+            android:exported="true" />
+        <activity
+            android:name=".Profil"
             android:exported="true" />
         <activity
             android:name=".Add__"
@@ -41,11 +44,11 @@
             />
 
         <activity
-            android:name=".Edit_Passwd"
+            android:name=".EditProfil"
             android:exported="true" />
         <activity android:name=".GroupActions" android:exported="true" />
         <activity android:name=".Sign_Up" />
-        <activity android:name=".Profil" />
+
         <activity
             android:name=".login"
             android:exported="true">

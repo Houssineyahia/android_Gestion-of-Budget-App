@@ -51,7 +51,7 @@ public class Edit_Passwd extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
       SessionManagement sessionManagement=new SessionManagement(Edit_Passwd.this) ;
         String username = sessionManagement.getSession();
-           //String username1="jamal";
+
 
         DBRef = FirebaseDatabase.getInstance().getReference().child("users").child(username).child("passwordString");
 
@@ -68,6 +68,8 @@ public class Edit_Passwd extends AppCompatActivity {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
+
+                        //Testing_Example OOook
                         String password_db = snapshot.getValue().toString();
                         textView.setText(password_db);
 
