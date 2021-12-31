@@ -8,17 +8,11 @@
     tools:context=".Add__">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".Add__">
-
-
-
-
 
 
         <ImageView
@@ -38,8 +32,7 @@
             android:text="Create a group !"
             android:textColor="@color/black"
             android:textSize="30dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,8 +40,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="20dp"
             android:orientation="horizontal"
-            android:paddingBottom="10px"
-            >
+            android:paddingBottom="10px">
 
 
             <EditText
@@ -98,6 +90,16 @@
             android:text="Create a group "
 
             />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="30px"
+            android:background="@drawable/radius"
+
+            android:text="Search a group " />
 
 
     </LinearLayout>

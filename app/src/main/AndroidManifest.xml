@@ -22,7 +22,8 @@
             android:exported="true" />
         <activity
             android:name=".Add__"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".addBudget"
             android:exported="true"
@@ -33,7 +34,8 @@
             />
         <activity
             android:name=".MainActivit"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".Groupinfo"
             android:exported="true" />
