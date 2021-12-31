@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,14 +33,20 @@ public class addBudget extends AppCompatActivity {
     EditText end_Date;
     EditText start_Date;
     EditText Amount;
+    TextView groupname;
         // connection with database
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
-
+    private  Intent intent = getIntent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_budget);
+        groupname = findViewById(R.id.namegroup);
+
+        groupname.setText(getIntent().getStringExtra("groupname"));
+        //groupname.setText("groupname");
+
         mDatabase = FirebaseDatabase.getInstance().getReference("Budget");
         Button add__budget = findViewById(R.id.add__Budget);
 
@@ -75,6 +82,7 @@ public class addBudget extends AppCompatActivity {
             }else {
 
                 mDatabase.child(Id).child("Id").setValue(Id);
+                mDatabase.child(Id).child("Group").setValue(getIntent().getStringExtra("groupid"));
                 mDatabase.child(Id).child("Amount").setValue(titleD);
                 mDatabase.child(Id).child("Start date").setValue(startDate);
                 mDatabase.child(Id).child("End date").setValue(endDate);
@@ -123,6 +131,9 @@ public class addBudget extends AppCompatActivity {
                         },year,month,day);
                         datePickerDialog.show();
 
+                    }});
+
+            }});
 
 
 
@@ -131,7 +142,7 @@ public class addBudget extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set dashboard select
 
-        bottomNavigationView.setSelectedItemId(R.id.groups);
+        bottomNavigationView.setSelectedItemId(R.id.add);
 
         //perform ItemSelectListener
 
@@ -140,11 +151,14 @@ public class addBudget extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
+                        Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profil:
+                        startActivity(new Intent(getApplicationContext(),Profil.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.add:
@@ -161,9 +175,10 @@ public class addBudget extends AppCompatActivity {
             }
 
 
-            });
-         }});
-
- }});
-    }
+            });}
 }
+
+
+
+
+

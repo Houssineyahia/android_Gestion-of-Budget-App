@@ -9,30 +9,30 @@
     >
 
 
-    <ListView
-
-        android:id="@+id/mygroups"
-        android:layout_width="365dp"
-        android:layout_height="558dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="358dp"
+        android:layout_height="523dp"
         android:layout_marginTop="32dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="72dp"
         android:layout_height="63dp"
+        android:layout_marginBottom="72dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mygroups"
         app:layout_constraintVertical_bias="0.186"
         app:srcCompat="@android:drawable/ic_input_add" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

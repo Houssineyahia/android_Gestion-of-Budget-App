@@ -28,12 +28,15 @@
             android:exported="true"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".Start"
+            android:name=".Listegroup"
             android:exported="true"
-
-
             />
-
+        <activity
+            android:name=".MainActivit"
+            android:exported="true" />
+        <activity
+            android:name=".Groupinfo"
+            android:exported="true" />
         <activity
             android:name=".Profil"
             android:exported="true" />
@@ -41,7 +44,7 @@
         <activity android:name=".Sign_Up" />
         <activity android:name=".login" />
         <activity
-            android:name=".Listegroup"
+            android:name=".Start"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
