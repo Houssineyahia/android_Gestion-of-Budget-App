@@ -4,38 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfil"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".EditProfil">
 
-    <TextView
-        android:layout_width="268dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="28dp"
-        android:text="Update your profile"
-        android:textColor="@color/purple_200"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="508dp"
+        android:layout_width="374dp"
+        android:layout_height="282dp"
         android:background="@drawable/style_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367"
+        app:layout_constraintVertical_bias="0.525"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="171dp"
-            android:layout_height="419dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="148dp"
+            android:layout_height="325dp"
+            android:layout_marginTop="0dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +60,18 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:text="  Username"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,35 +84,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:drawableLeft="@drawable/ic_age_123_24"
-                android:text="New password"
-                android:textColor="@color/black"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Passwd_Conf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:drawableLeft="@drawable/ic_age_123_24"
-                android:text="  Password Confirmation"
-                android:textColor="@color/black"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/email"
-                android:layout_width="92dp"
-                android:layout_height="38dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="30dp"
                 android:drawableLeft="@drawable/email"
                 android:text="  Email"
                 android:textColor="@color/black"
@@ -122,9 +98,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="213dp"
-            android:layout_height="432dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="205dp"
+            android:layout_height="309dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/style_layout"
             android:orientation="vertical"
@@ -136,25 +112,35 @@
 
 
             <EditText
-                android:id="@+id/efirstnm5"
+                android:id="@+id/Fname"
                 android:layout_width="200dp"
                 android:layout_height="42dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="Last name" />
-
-            <EditText
-                android:id="@+id/efirstnm4"
-                android:layout_width="200dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_text_style"
                 android:hint="First name" />
 
             <EditText
-                android:id="@+id/efirstnm7"
+                android:id="@+id/Lname"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Last name" />
+
+            <EditText
+                android:id="@+id/Uname"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_style"
+                android:focusable="false"
+                android:hint="Username" />
+
+            <EditText
+                android:id="@+id/Phone"
                 android:layout_width="200dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="15dp"
@@ -164,28 +150,10 @@
 
 
             <EditText
-                android:id="@+id/efirstnm6"
+                android:id="@+id/Email"
                 android:layout_width="200dp"
                 android:layout_height="42dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="New password" />
-
-            <EditText
-                android:id="@+id/efirstnm6"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="Confirmation" />
-
-            <EditText
-                android:id="@+id/emailtext"
-                android:layout_width="200dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="11dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_text_style"
                 android:hint="Email" />
@@ -197,18 +165,18 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/Edit_btn"
         android:layout_width="101dp"
         android:layout_height="40dp"
         android:background="@drawable/style_button"
-        android:text="Submit"
+        android:text="Apply"
         android:textAllCaps="false"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.84" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -228,5 +196,16 @@
         tools:ignore="MissingConstraints">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="142dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/manuser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

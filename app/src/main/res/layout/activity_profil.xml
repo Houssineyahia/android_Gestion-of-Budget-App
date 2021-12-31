@@ -21,8 +21,9 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="826dp"
-        android:layout_height="440dp"
+        android:layout_width="807dp"
+        android:layout_height="302dp"
+        android:layout_marginBottom="130dp"
         android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +34,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-            android:id="@+id/textView"
+            android:id="@+id/Full_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -55,35 +56,35 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/manuser" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/abdellatifbouzalim_gmail_com"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="My email"
+
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Full_name" />
 
     <LinearLayout
-        android:layout_width="196dp"
-        android:layout_height="309dp"
+        android:layout_width="166dp"
+        android:layout_height="301dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
+        app:layout_constraintVertical_bias="0.668"
         tools:ignore="MissingConstraints">
 
 
         <TextView
-            android:id="@+id/firstnametext"
+            android:id="@+id/Fname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -94,7 +95,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/lastnametext"
+            android:id="@+id/Lname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -105,7 +106,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/usernametext"
+            android:id="@+id/Uname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -116,7 +117,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/phonetext"
+            android:id="@+id/Phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -127,7 +128,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/agetext"
+            android:id="@+id/Age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -141,8 +142,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="188dp"
-        android:layout_height="298dp"
+        android:layout_width="189dp"
+        android:layout_height="301dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

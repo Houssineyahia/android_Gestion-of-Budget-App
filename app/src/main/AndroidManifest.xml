@@ -14,11 +14,14 @@
         android:theme="@style/Theme.MyAAP_GESTION_OF_BUDGET">
         <activity android:name=".Dashboard"
             android:exported="true"/>
+        <!--<activity
+            android:name=".Edit_Passwd"
+            android:exported="true" /> -->
         <activity
             android:name=".addBudget"
             android:exported="true" />
         <activity
-            android:name=".EditProfil"
+            android:name=".Edit_Passwd"
             android:exported="true" />
         <activity
             android:name=".Add__"
@@ -37,14 +40,14 @@
         <activity
             android:name=".Groupinfo"
             android:exported="true" />
-        <activity
-            android:name=".Profil"
-            android:exported="true" />
         <activity android:name=".GroupActions" android:exported="true" />
         <activity android:name=".Sign_Up" />
-        <activity android:name=".login" />
+
         <activity
-            android:name=".Start"
+
+
+            android:name=".login"
+
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
