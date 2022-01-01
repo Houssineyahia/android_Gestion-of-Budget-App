@@ -55,7 +55,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
         adapter = new groupAdapter(Listegroup.this , liste , this);
         myRecycle.setAdapter(adapter);
 
-         progress = new ProgressDialog(this);
+      progress = new ProgressDialog(this);
          progress.setCancelable(false);
          progress.setMessage("Please Wait ..........");
          progress.show();

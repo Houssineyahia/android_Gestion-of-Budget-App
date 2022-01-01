@@ -11,12 +11,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Groupinfo extends AppCompatActivity {
     private Button button1;
@@ -25,6 +29,9 @@ public class Groupinfo extends AppCompatActivity {
     TextView groupname ;
     TextView admin ;
     TextView Idd ;
+    DatabaseReference group_enrolments= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    DatabaseReference User_enrolments= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +42,19 @@ public class Groupinfo extends AppCompatActivity {
         Idd = findViewById(R.id.textView2);
         button3 = findViewById(R.id.imageButton4);
         searches = findViewById(R.id.searchgrou);
-            showgroupdata();
+        group_enrolments = FirebaseDatabase.getInstance().getReference("group_enrolments");
+        User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
+        Intent intent = getIntent();
+        String group_name = intent.getStringExtra("Group Name");
+        String id_ = intent.getStringExtra("Id");
+        String group_admin = intent.getStringExtra("Group Admin");
+        groupname.setText(group_name);
+        admin.setText(group_admin);
+        Idd.setText(id_);
+        SessionManagement sessionManagement=new SessionManagement(Groupinfo.this) ;
+        String username= sessionManagement.getSession();
+
+
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,18 +62,16 @@ public class Groupinfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-    }
-
-    private void showgroupdata() {
-            Intent intent = getIntent();
-            String group_name = intent.getStringExtra("Group Name");
-            String id_ = intent.getStringExtra("Id");
-            String group_admin = intent.getStringExtra("Group Admin");
-        groupname.setText(group_name);
-        admin.setText(group_admin);
-        Idd.setText(id_);
+                group_enrolments.child(id_).child( username).setValue("true");
+                User_enrolments.child( username).child(id_).setValue("true");
+                Toast.makeText(Groupinfo.this, "Group has been successfully joined ! ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
 }

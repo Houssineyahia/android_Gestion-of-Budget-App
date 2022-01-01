@@ -52,7 +52,7 @@ public class Add__ extends AppCompatActivity {
         users = FirebaseDatabase.getInstance().getReference("users");
         mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
         group_enrolments = FirebaseDatabase.getInstance().getReference("group_enrolments");
-        //User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
+       //User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Button buttonSave = findViewById(R.id.button);
@@ -114,12 +114,7 @@ public class Add__ extends AppCompatActivity {
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivit.class));
-            }
-        });
+        button2.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),MainActivit.class)));
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
