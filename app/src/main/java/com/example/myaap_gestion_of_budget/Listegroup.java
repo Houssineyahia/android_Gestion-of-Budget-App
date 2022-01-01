@@ -135,7 +135,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
                             liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
-
+                            
                             adapter.notifyDataSetChanged();
 
                             if(progress.isShowing()){
