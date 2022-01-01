@@ -22,7 +22,6 @@ public class Groupinfo extends AppCompatActivity {
     private Button button1;
     private ImageButton button3;
     EditText searches;
-    DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     TextView groupname ;
     TextView admin ;
     TextView Idd ;
@@ -36,7 +35,6 @@ public class Groupinfo extends AppCompatActivity {
         Idd = findViewById(R.id.textView2);
         button3 = findViewById(R.id.imageButton4);
         searches = findViewById(R.id.searchgrou);
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
             showgroupdata();
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
