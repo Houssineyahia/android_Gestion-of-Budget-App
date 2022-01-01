@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,18 +24,18 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivit extends AppCompatActivity {
     private Button button;
     private Button button1;
-    EditText searches;
+    SearchView searches;
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
-    TextView groupname ;
-    TextView admin ;
-    TextView Idd ;
+    String groupname ;
+    String admin ;
+    String Idd ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-       groupname = findViewById(R.id.textView4);
-        admin = findViewById(R.id.textView);
-        Idd = findViewById(R.id.textView2);
+        setContentView(R.layout.activity_mains);
+     //  groupname = findViewById(R.id.textView4);
+       // admin = findViewById(R.id.textView);
+        //Idd = findViewById(R.id.textView2);
 
         button = (Button) findViewById(R.id.button);
         searches = findViewById(R.id.searchgrou);
@@ -45,7 +46,7 @@ public class MainActivit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            String sear = searches.getText().toString();
+            String sear = searches.toString();
             Query checkGroup = mDatabase.orderByChild("Id").equalTo(sear);
 
                 if(sear.isEmpty()) {
@@ -92,16 +93,6 @@ public class MainActivit extends AppCompatActivity {
         } }) ;
     }
 
-    public void openActivity2(String GroupName, String id , String GroupAdmin ) {
-        setContentView(R.layout.group_info);
-        button1 = (Button) findViewById(R.id.button1);
-        groupname = findViewById(R.id.textView4);
-        admin = findViewById(R.id.textView);
-        Idd = findViewById(R.id.textView2);
-        groupname.setText(GroupName);
-        admin.setText(GroupAdmin);
-        Idd.setText(id);
 
-    }
 
 }

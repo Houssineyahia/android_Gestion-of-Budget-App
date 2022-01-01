@@ -29,10 +29,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="05px"
                 android:layout_marginTop="0px"
-                android:background="@drawable/rectangle"
+                android:background="@color/reed"
                 android:elevation="5dp"
                 android:hint="ID group"
-                android:queryHint=" Id group">
+                android:queryHint=" Id group"
+
+                >
 
             </SearchView>
 
