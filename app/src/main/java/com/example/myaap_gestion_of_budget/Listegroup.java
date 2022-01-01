@@ -2,43 +2,41 @@ package com.example.myaap_gestion_of_budget;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Listegroup extends AppCompatActivity {
-    private ArrayList<GroupClass> liste;
-    private ArrayAdapter adapter;
+public class Listegroup extends AppCompatActivity implements groupAdapter.groupViewHolder.OnclickListener {
+    RecyclerView myRecycle ;
+    ArrayList<GroupClass> liste;
+    groupAdapter adapter;
+    DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    ProgressDialog progress;
     private static final int RQ_CODE_EDITION = 1;
-
-    public ArrayList<GroupClass> initData(){
-        Resources res = getResources();
-        final String[] libelles =  res.getStringArray(R.array.GNames);
-        final String[] Creatore_name = res.getStringArray(R.array.Creators);
-        final String[] ids = res.getStringArray(R.array.Groupids);
-        ArrayList<GroupClass> liste2;
-        liste2 = new ArrayList<>();
-        for (int i=0; i<libelles.length; ++i) {
-            liste2.add(new GroupClass(libelles[i], Creatore_name[i] , ids[i]));
-        }
-
-        return liste2;
-
-    }
-
 
 
 
@@ -48,11 +46,27 @@ public class Listegroup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listegroup);
 
-        liste = new ArrayList<>();
-        liste = initData();
-        ListView lv = (ListView) findViewById(R.id.mygroups);
-        adapter = new GroupListeAdapter(this,liste);
-        lv.setAdapter(adapter);
+        myRecycle = findViewById(R.id.recycleview);
+        myRecycle.setHasFixedSize(true);
+        myRecycle.setLayoutManager(new LinearLayoutManager(this));
+        liste = new ArrayList<GroupClass>();
+        //liste = initData();
+
+        adapter = new groupAdapter(Listegroup.this , liste , this);
+        myRecycle.setAdapter(adapter);
+
+         progress = new ProgressDialog(this);
+         progress.setCancelable(false);
+         progress.setMessage("Please Wait ..........");
+         progress.show();
+
+
+        
+        HandlChangeListener();
+
+        //myRecycle.addOnItemTouchListener( new );
+
+
         //+ button Click Event
         FloatingActionButton addGroup = findViewById(R.id.floatingActionButton);
 
@@ -65,27 +79,6 @@ public class Listegroup extends AppCompatActivity {
                     }
                 }
         );
-        ////////////////////
-        lv.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Object o = lv.getItemAtPosition(position);
-                        String p = o.toString();
-                        Toast.makeText(getApplicationContext(), "You have chosen the pen: " + " " + p, Toast.LENGTH_LONG).show();
-                        Intent Action = new Intent(Listegroup.this , GroupActions.class);
-                        Action.putExtra("GroupId" , p);
-                        startActivity(Action);
-
-
-                    }
-                }
-        );
-
-
-
-
-
 
 
         //initiaize and assign variables
@@ -126,5 +119,57 @@ public class Listegroup extends AppCompatActivity {
 
 
         });
+    }
+
+
+    private  void HandlChangeListener(){
+        SessionManagement sessionManagement = new SessionManagement(this);
+        String username = sessionManagement.getSession();
+        databasereference.child("User_enrolments").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data: snapshot.getChildren()) {
+
+                    databasereference.child("Groups").child(data.getKey().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
+                            liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
+                            
+                            adapter.notifyDataSetChanged();
+
+                            if(progress.isShowing()){
+                                progress.dismiss();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+
+
+    @Override
+    public void GroupItemClick(int position) {
+        GroupClass selected = liste.get(position);
+        //here we cn navigate
+         Intent actionInt = new Intent(this , GroupActions.class);
+         actionInt.putExtra("GroupId" , selected.getId());
+         startActivity(actionInt);
+
     }
 }

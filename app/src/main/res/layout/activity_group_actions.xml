@@ -37,16 +37,6 @@
 
 
                 <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="ID :"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
                     android:id="@+id/AgroupId"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
@@ -56,6 +46,18 @@
                     android:textSize="20dp"
                     android:textColor="@color/black"
                     />
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/copyId"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    app:srcCompat="@drawable/ic_baseline_content_copy_24" />
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -65,7 +67,7 @@
 
 
                 <TextView
-
+                    android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_weight="1"
@@ -94,7 +96,7 @@
                     android:textSize="20dp" />
 
                 <TextView
-
+                    android:id="@+id/gtype"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_weight="1"
@@ -117,7 +119,7 @@
                 android:textSize="20dp" />
 
             <TextView
-
+                android:id="@+id/grouD"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_gravity="center_horizontal"
@@ -156,7 +158,7 @@
             android:layout_margin="20dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button5"
+            android:id="@+id/deleteg"
             android:layout_width="261dp"
             android:layout_height="47dp"
             android:background="@color/reed"

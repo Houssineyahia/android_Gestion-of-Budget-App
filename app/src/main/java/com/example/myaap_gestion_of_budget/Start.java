@@ -22,9 +22,9 @@ public class Start extends AppCompatActivity {
 
             animation = AnimationUtils.loadAnimation(this,R.anim.animation);
             imageView=findViewById(R.id.imageView);
-            appName=findViewById(R.id.appName);
+         //   appName=findViewById(R.id.appName);
             imageView.setAnimation(animation);
-            appName.setAnimation(animation);
+           // appName.setAnimation(animation);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
