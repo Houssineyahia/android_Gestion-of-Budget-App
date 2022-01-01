@@ -4,9 +4,11 @@ package com.example.myaap_gestion_of_budget;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,18 +25,18 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivit extends AppCompatActivity {
     private Button button;
     private Button button1;
-    EditText searches;
+    SearchView searches;
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
-    TextView groupname ;
-    TextView admin ;
-    TextView Idd ;
+    String groupname ;
+    String admin ;
+    String Idd ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-       groupname = findViewById(R.id.textView4);
-        admin = findViewById(R.id.textView);
-        Idd = findViewById(R.id.textView2);
+        setContentView(R.layout.activity_mains);
+     //  groupname = findViewById(R.id.textView4);
+       // admin = findViewById(R.id.textView);
+        //Idd = findViewById(R.id.textView2);
 
         button = (Button) findViewById(R.id.button);
         searches = findViewById(R.id.searchgrou);
@@ -45,8 +47,11 @@ public class MainActivit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            String sear = searches.getText().toString();
-            Query checkGroup = mDatabase.orderByChild("Id").equalTo(sear);
+            String sear = searches.getQuery().toString();
+                Log.i("the shit " , sear);
+                //Toast.makeText(MainActivit.this, sear, Toast.LENGTH_SHORT).show();
+
+                //Query checkGroup = mDatabase.orderByChild("Id").equalTo(sear);
 
                 if(sear.isEmpty()) {
                 Toast.makeText(MainActivit.this, "Please fill the fields ", Toast.LENGTH_SHORT).show();
@@ -54,21 +59,21 @@ public class MainActivit extends AppCompatActivity {
                 else
 
             {
-                checkGroup.addListenerForSingleValueEvent(new ValueEventListener() {
+                mDatabase.child(sear).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
 
-                            String GroupName = dataSnapshot.child(sear).child("Group Name").getValue(String.class);
-                            String id = dataSnapshot.child(sear).child("Id").getValue(String.class);
-                            String GroupAdmin = dataSnapshot.child(sear).child("Group Admin").getValue(String.class);
+                            String GroupName = dataSnapshot.child("Group Name").getValue(String.class);
+                            //String id = dataSnapshot.child("Id").getValue(String.class);
+                            String GroupAdmin = dataSnapshot.child("Group Admin").getValue(String.class);
                           /* openActivity2( GroupName,  id ,GroupAdmin );
                             groupname.setText(GroupName);
                             admin.setText(GroupAdmin);
                             Idd.setText(id);*/
                           Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
                             intent.putExtra("Group Name", GroupName);
-                            intent.putExtra("Id", id);
+                            intent.putExtra("Id", sear);
                             intent.putExtra("Group Admin", GroupAdmin);
                            startActivity(intent);
 
@@ -92,16 +97,6 @@ public class MainActivit extends AppCompatActivity {
         } }) ;
     }
 
-    public void openActivity2(String GroupName, String id , String GroupAdmin ) {
-        setContentView(R.layout.group_info);
-        button1 = (Button) findViewById(R.id.button1);
-        groupname = findViewById(R.id.textView4);
-        admin = findViewById(R.id.textView);
-        Idd = findViewById(R.id.textView2);
-        groupname.setText(GroupName);
-        admin.setText(GroupAdmin);
-        Idd.setText(id);
 
-    }
 
 }

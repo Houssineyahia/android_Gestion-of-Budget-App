@@ -3,6 +3,7 @@ package com.example.myaap_gestion_of_budget;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Add__ extends AppCompatActivity {
-
+    private Button button2;
     EditText Groupname;
     EditText groupdescription;
     EditText grouptype;
@@ -51,12 +52,12 @@ public class Add__ extends AppCompatActivity {
         users = FirebaseDatabase.getInstance().getReference("users");
         mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
         group_enrolments = FirebaseDatabase.getInstance().getReference("group_enrolments");
-        //User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
+       //User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Button buttonSave = findViewById(R.id.button);
 
-
+         button2=findViewById(R.id.button2);
 
         Groupname = findViewById(R.id.editTextTextPersonName4);
         groupdescription = findViewById(R.id.editTextTextPersonName5);
@@ -112,6 +113,8 @@ public class Add__ extends AppCompatActivity {
 
             }
         });
+
+        button2.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),MainActivit.class)));
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

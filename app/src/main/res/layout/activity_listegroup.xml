@@ -30,8 +30,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mygroups"
-        app:layout_constraintVertical_bias="0.186"
+        app:layout_constraintTop_toBottomOf="@+id/recycleview"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
