@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">JAYBY</string>
     <string name="abdellatifbouzalim_gmail_com">abdellatifbouzalim@gmail.com</string>
+    <string-array name="activities">
+        <item>Food</item>
+        <item>Food</item>
+        <item>Food</item>
+        <item>Food</item>
+        <item>Food</item>
+        <item>Food</item>
+    </string-array>
 </resources>
