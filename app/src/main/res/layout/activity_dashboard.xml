@@ -9,18 +9,16 @@
     >
 
 
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="95dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/thebigdiv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        >
+        app:layout_constraintVertical_bias="0.49">
 
 
         <Spinner
@@ -72,8 +70,8 @@
             <LinearLayout
                 android:id="@+id/budgetZone"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/button_bg"
                 android:orientation="horizontal">
 
@@ -81,7 +79,7 @@
                 <LinearLayout
                     android:id="@+id/budgetdiv"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:layout_weight="2"
                     android:orientation="vertical">
 
@@ -100,11 +98,11 @@
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="5dp"
                         android:text="500 DH"
                         android:textAlignment="center"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="@color/black"
+                        android:textColor="@android:color/holo_green_dark"
                         android:textSize="30dp" />
                     />
 
@@ -114,7 +112,7 @@
                 <LinearLayout
                     android:id="@+id/imagediv"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -122,8 +120,8 @@
 
                     <ImageView
                         android:id="@+id/imageView"
-                        android:layout_width="96dp"
-                        android:layout_height="80dp"
+                        android:layout_width="90dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="right"
                         android:paddingRight="20dp"
                         app:srcCompat="@drawable/budget" />
@@ -138,7 +136,7 @@
             <LinearLayout
                 android:id="@+id/expence"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
 
@@ -146,7 +144,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/radius"
@@ -183,7 +181,7 @@
                                 android:id="@+id/textView3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingTop="20dp"
+                                android:paddingTop="10dp"
                                 android:text="2030 DH"
                                 android:textAlignment="center"
                                 android:layout_gravity="center_horizontal"
@@ -215,7 +213,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
 
@@ -259,7 +257,7 @@
                                     android:id="@+id/textVi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:paddingTop="20dp"
+                                    android:paddingTop="10dp"
                                     android:text="2030 DH"
                                     android:textAlignment="center"
                                     android:layout_gravity="center_horizontal"
@@ -298,37 +296,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+                >
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    app:srcCompat="@drawable/warning"
-                    />
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/warning" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Day Average :"
                     android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:gravity="right"
                     android:paddingLeft="10dp"
-                    android:gravity="right"
-                    />
+                    android:text="Day Average :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="20DH"
                     android:gravity="right"
-                    android:paddingRight="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="24dp"
                     android:paddingTop="2dp"
-                    />
+                    android:paddingRight="10dp"
+                    android:text="20DH"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -344,24 +338,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
+                    android:layout_weight="1"
                     android:paddingLeft="10dp"
                     android:paddingTop="10dp"
                     android:text="Transaction :"
-                    android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-20DH"
                     android:gravity="right"
-                    android:paddingRight="10dp"
-                    android:textColor="@color/reed"
-                    android:textSize="24dp"
                     android:paddingTop="2dp"
-                    />
+                    android:paddingRight="10dp"
+                    android:text="-20DH"
+                    android:textColor="@color/reed"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
