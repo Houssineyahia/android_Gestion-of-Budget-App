@@ -1,9 +1,11 @@
 package com.example.myaap_gestion_of_budget;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.renderscript.Sampler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
@@ -17,11 +19,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity  {
+    private GoogleApiClient mGoogleApiClient;
     private ArrayList<MenuClass> liste;
     private ArrayAdapter adapter;
     private static final int RQ_CODE_EDITION = 1;
@@ -42,6 +47,28 @@ public class Dashboard extends AppCompatActivity  {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int item_id=item.getItemId();
+        if(item_id==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
+            Intent intent =new Intent(Dashboard.this,login.class);
+            getIntent().setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(Dashboard.this,Add_Activity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +81,9 @@ public class Dashboard extends AppCompatActivity  {
         ListView lv = (ListView) findViewById(android.R.id.list);
         adapter = new MenuListeAdapter(this,liste);
         lv.setAdapter(adapter);
+
+
+
 
         //exprncechanetest.setText(budget);
 

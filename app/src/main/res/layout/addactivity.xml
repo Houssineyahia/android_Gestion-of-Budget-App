@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add__"
+    android:background="@color/white"
+    >
+
+
+
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/violet"
+        app:itemIconTint="@color/icons_color"
+        app:itemRippleColor="@color/grey"
+        app:menu="@menu/navigation">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:gravity="center"
+            android:layout_marginTop="100px"
+            android:layout_weight="1"
+            android:text="select an activity"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/add_activity"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="79dp"
+        android:layout_weight="1"
+        android:background="@drawable/radius2"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/add_activity"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="190dp"
+        android:text="Add" />
+
+</RelativeLayout>
