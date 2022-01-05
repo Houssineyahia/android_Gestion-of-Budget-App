@@ -110,7 +110,7 @@ public class Dashboard extends AppCompatActivity  {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
+               case R.id.dashboard:
 
                         return true;
 
