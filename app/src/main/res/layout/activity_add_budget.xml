@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/violet"
+        android:background="@drawable/naveba"
         app:itemIconTint="@color/icons_color"
         app:itemRippleColor="@color/violet"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,10 +119,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
+        app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

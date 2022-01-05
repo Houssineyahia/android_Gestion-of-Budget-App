@@ -201,7 +201,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/violet"
+        android:background="@drawable/naveba"
         app:itemIconTint="@color/icons_color"
         app:itemRippleColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
