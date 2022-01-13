@@ -34,10 +34,6 @@ public class MainActivit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mains);
-     //  groupname = findViewById(R.id.textView4);
-       // admin = findViewById(R.id.textView);
-        //Idd = findViewById(R.id.textView2);
-
         button = (Button) findViewById(R.id.button);
         searches = findViewById(R.id.searchgrou);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Groups");
@@ -48,10 +44,6 @@ public class MainActivit extends AppCompatActivity {
             public void onClick(View v) {
 
             String sear = searches.getQuery().toString();
-                Log.i("the shit " , sear);
-                //Toast.makeText(MainActivit.this, sear, Toast.LENGTH_SHORT).show();
-
-                //Query checkGroup = mDatabase.orderByChild("Id").equalTo(sear);
 
                 if(sear.isEmpty()) {
                 Toast.makeText(MainActivit.this, "Please fill the fields ", Toast.LENGTH_SHORT).show();
@@ -63,14 +55,8 @@ public class MainActivit extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
-
                             String GroupName = dataSnapshot.child("Group Name").getValue(String.class);
-                            //String id = dataSnapshot.child("Id").getValue(String.class);
                             String GroupAdmin = dataSnapshot.child("Group Admin").getValue(String.class);
-                          /* openActivity2( GroupName,  id ,GroupAdmin );
-                            groupname.setText(GroupName);
-                            admin.setText(GroupAdmin);
-                            Idd.setText(id);*/
                           Intent intent = new Intent(getApplicationContext(), Groupinfo.class);
                             intent.putExtra("Group Name", GroupName);
                             intent.putExtra("Id", sear);
@@ -86,11 +72,7 @@ public class MainActivit extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
-                   /* if(sear.equals(s)!=true){
-                Toast.makeText(MainActivit.this, "This ID  is not existe ", Toast.LENGTH_SHORT).show(); }
-                  else {
-                        openActivity2();
-                   }*/
+
                 });
             }
 
