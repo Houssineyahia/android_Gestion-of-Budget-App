@@ -379,7 +379,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/naveba"
         app:itemIconTint="@color/icons_color"
-        app:itemRippleColor="@color/grey"
+        app:itemRippleColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

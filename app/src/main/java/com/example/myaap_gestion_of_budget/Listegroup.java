@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,22 +56,44 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
         adapter = new groupAdapter(Listegroup.this , liste , this);
         myRecycle.setAdapter(adapter);
 
-      progress = new ProgressDialog(this);
-         progress.setCancelable(false);
-         progress.setMessage("Please Wait ..........");
-         progress.show();
+        progress = new ProgressDialog(this);
+        progress.setCancelable(false);
+        progress.setMessage("Please Wait ..........");
+        progress.show();
 
 
-        
-        HandlChangeListener();
+
+        HandlChangeListener(0);
 
         //myRecycle.addOnItemTouchListener( new );
 
 
+        TabLayout mytabLayout = findViewById(R.id.tabLayout);
+
+        mytabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                //int numtab = tab.getPosition();
+                Toast.makeText(Listegroup.this, " " + tab.getPosition(), Toast.LENGTH_SHORT).show();
+
+                HandlChangeListener(tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
         //+ button Click Event
-
-
-
         //initiaize and assign variables
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -110,7 +133,9 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     }
 
 
-    private  void HandlChangeListener(){
+    private  void HandlChangeListener(int position){
+        liste.clear();
+
         SessionManagement sessionManagement = new SessionManagement(this);
         String username = sessionManagement.getSession();
         databasereference.child("User_enrolments").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -121,9 +146,27 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                     databasereference.child("Groups").child(data.getKey().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
-                            liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
-                            
+
+
+                            if(position == 0){
+                                if(String.valueOf(snapshot.child("Group Type").getValue()).equals("i")){
+                                    liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
+                                    Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
+                                }
+
+                            }else if(position == 1){
+
+                                if(String.valueOf(snapshot.child("Group Admin").getValue()).equals(username) && String.valueOf(snapshot.child("Group Type").getValue()).equals("g")){
+                                    liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue()) ));
+                                }
+
+
+                            }else{
+                                if(!String.valueOf(snapshot.child("Group Admin").getValue()).equals(username) && String.valueOf(snapshot.child("Group Type").getValue()).equals("g")){
+                                    liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue()) ));
+                                }
+                            }
+
                             adapter.notifyDataSetChanged();
 
                             if(progress.isShowing()){
@@ -155,9 +198,9 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     public void GroupItemClick(int position) {
         GroupClass selected = liste.get(position);
         //here we cn navigate
-         Intent actionInt = new Intent(this , GroupActions.class);
-         actionInt.putExtra("GroupId" , selected.getId());
-         startActivity(actionInt);
+        Intent actionInt = new Intent(this , GroupActions.class);
+        actionInt.putExtra("GroupId" , selected.getId());
+        startActivity(actionInt);
 
     }
 }
