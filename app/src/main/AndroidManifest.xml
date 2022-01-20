@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAAP_GESTION_OF_BUDGET">
-        <activity android:name=".Add_Activity"></activity>
+        <activity android:name=".ChnagePassword"></activity>
+        <activity android:name=".Add_Activity" />
         <activity
             android:name=".Dashboard"
             android:exported="true" />

@@ -1,5 +1,6 @@
 package com.example.myaap_gestion_of_budget;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -16,9 +17,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +33,7 @@ public class Dashboard extends AppCompatActivity  {
     private ArrayList<MenuClass> liste;
     private ArrayAdapter adapter;
     private static final int RQ_CODE_EDITION = 1;
+    SessionManagement sessionManagement;
     //TextView exprncechanetest = findViewById(R.id.textView5);
     private String  budget = "none";
 
@@ -55,15 +59,23 @@ public class Dashboard extends AppCompatActivity  {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         int item_id=item.getItemId();
+
         if(item_id==R.id.logout){
-            FirebaseAuth.getInstance().signOut();
-            Intent intent =new Intent(Dashboard.this,login.class);
-            getIntent().setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+            String username = sessionManagement.getSession();
+
+
+            Intent i = new Intent(Dashboard.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+
+
         }
+
         if (item_id==R.id.change_password){
-            Intent intent=new Intent(Dashboard.this,Add_Activity.class);
+            Intent intent=new Intent(Dashboard.this,ChnagePassword.class);
             startActivity(intent);
         }
         return true;

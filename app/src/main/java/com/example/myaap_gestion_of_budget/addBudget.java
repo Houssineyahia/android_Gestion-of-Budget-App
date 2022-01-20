@@ -90,7 +90,9 @@ public class addBudget extends AppCompatActivity {
 
 
                 Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
-
+                Intent actionInt = new Intent(this , Add_Activity.class);
+                actionInt.putExtra("Budgetid" , Id);
+                startActivity(actionInt);
                 // clear all fields
                 title.getText().clear();
                 start_Date.getText().clear();
