@@ -144,7 +144,7 @@ public class Dashboard extends AppCompatActivity  {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set dashboard select
 
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.groups);
 
         //perform ItemSelectListener
 
@@ -152,9 +152,7 @@ public class Dashboard extends AppCompatActivity  {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
 
-                        return true;
 
                     case R.id.profil:
                         startActivity(new Intent(getApplicationContext(),Profil.class));

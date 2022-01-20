@@ -9,16 +9,41 @@
         <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/activity_listegroup.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/custommenu.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/FP Stuff/Desktop/Androidprj/android_app/app/src/main/res/layout/groupitem.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/activity_group_actions.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/activity_listegroup.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/activity_mains.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/FP Stuff/Desktop/BUDGETAPP/android_app/app/src/main/res/layout/groupitem.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable-v24/add.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable-v24/addgroup.xml" value="0.3828125" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable-v24/dashboard.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable-v24/groups.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable/dashradius2.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable/dashraduis.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable/navba.xml" value="0.3828125" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/drawable/nave.xml" value="0.3828125" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_add.xml" value="0.33611111111111114" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_add_budget.xml" value="0.3109375" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_edit_profil.xml" value="0.3109375" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_group_actions.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_groups.xml" value="0.2015625" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_listegroup.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_mains.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_profil.xml" value="0.3509259259259259" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/add_group.xml" value="0.3101851851851852" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/custommenu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/group_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/groupitem.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/menuradius.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/layout/secondactivity.xml" value="0.3625" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/menu/navigation.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/said/AndroidStudioProjects/android_app/app/src/main/res/menu/navigationtop.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
