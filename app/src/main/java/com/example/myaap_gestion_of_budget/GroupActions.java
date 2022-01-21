@@ -126,42 +126,8 @@ public class GroupActions extends AppCompatActivity {
                 Log.i("44" , String.valueOf(username.equals(groupAdmin)));
 
                 if(String.valueOf(username.equals(groupAdmin)).equals("true")){
-                   // Toast.makeText(GroupActions.this, groupid, Toast.LENGTH_SHORT).show();
-                    //deletebtn.setEnabled(true);
-
-                  /* databasereference.child("Budget").getRef().orderByChild("Group").equalTo(groupid).addListenerForSingleValueEvent(new ValueEventListener() {
-                       @Override
-                       public void onDataChange(@NonNull DataSnapshot snapshot) {
-                           if(snapshot.exists()){
-                               Toast.makeText(GroupActions.this , snapshot.toString() , Toast.LENGTH_LONG).show();
-                           }else{
-                               Toast.makeText(GroupActions.this , "makayne walo " , Toast.LENGTH_SHORT).show();
-
-                           }
-                       }
-
-                       @Override
-                       public void onCancelled(@NonNull DatabaseError error) {
-
-                       }
-                   });*/
-
-
-                    /*databasereference.child("Budget").getRef().orderByChild("Group").equalTo(groupid).removeEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });*/
-
-
-
-
+                    Toast.makeText(GroupActions.this, String.valueOf("you can"), Toast.LENGTH_SHORT).show();
+                    deletebtn.setEnabled(true);
                 }else{
                     Toast.makeText(GroupActions.this, "machi nta admin" , Toast.LENGTH_SHORT).show();
 
@@ -181,7 +147,6 @@ public class GroupActions extends AppCompatActivity {
     public void onBackPressed() {
         // disable going back to the MainActivity
         Toast.makeText(GroupActions.this, "hanta rja3tu ", Toast.LENGTH_SHORT).show();
-
         finish();
     }
 }

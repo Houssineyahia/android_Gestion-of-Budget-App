@@ -143,26 +143,11 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
         databasereference.child("User_enrolments").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if(!snapshot.hasChildren()){
-                    progress.dismiss();
-                }
-
-
                 for (DataSnapshot data: snapshot.getChildren()) {
 
                     databasereference.child("Groups").child(data.getKey().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-
-                            if(!snapshot.hasChildren()){
-                                progress.dismiss();
-                            }
-
-                            Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
-                            liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
-                            
 
 
                             if(position == 0){
@@ -184,7 +169,6 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                                 }
                             }
 
-
                             adapter.notifyDataSetChanged();
 
                             if(progress.isShowing()){
@@ -194,9 +178,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            if(progress.isShowing()){
-                                progress.dismiss();
-                            }
+
                         }
                     });
 
