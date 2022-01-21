@@ -155,7 +155,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-<<<<<<< HEAD
+
                             if(!snapshot.hasChildren()){
                                 progress.dismiss();
                             }
@@ -163,7 +163,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                             Log.i("44",String.valueOf(snapshot.child("Description").getValue()));
                             liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue())  ));
                             
-=======
+
 
                             if(position == 0){
                                 if(String.valueOf(snapshot.child("Group Type").getValue()).equals("i")){
@@ -184,7 +184,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                                 }
                             }
 
->>>>>>> younesbranch
+
                             adapter.notifyDataSetChanged();
 
                             if(progress.isShowing()){
