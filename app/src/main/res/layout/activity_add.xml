@@ -19,16 +19,12 @@
         tools:context=".Add__">
 
 
-
-
-
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="124dp"
             android:layout_height="152dp"
             android:layout_marginLeft="140dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             app:srcCompat="@drawable/logo" />
 
 
@@ -36,52 +32,48 @@
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="85dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:text="Create a group !"
             android:textColor="@color/black"
             android:textSize="30dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="20dp"
-            android:orientation="vertical"
-            android:paddingBottom="10px"
             android:gravity="center"
-            >
+            android:orientation="vertical"
+            android:paddingBottom="10px">
 
 
             <EditText
                 android:id="@+id/editTextTextPersonName4"
                 android:layout_width="328dp"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/radius2"
                 android:drawablePadding="20dp"
                 android:ems="10"
                 android:hint="Group name"
                 android:inputType="textPersonName"
-                android:padding="15dp"
-                android:layout_marginBottom="20dp"
-                />
+                android:padding="15dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName5"
                 android:layout_width="328dp"
                 android:layout_height="89dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/radius2"
                 android:drawablePadding="20dp"
                 android:hint="Description"
                 android:inputType="textPersonName"
+
                 android:padding="15dp"
 
-                android:layout_marginBottom="20dp"
-
                 />
-
 
 
             <EditText
@@ -125,7 +117,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/violet"
+        android:background="@drawable/naveba"
         app:itemIconTint="@color/icons_color"
         app:itemRippleColor="@color/grey"
         app:menu="@menu/navigation">

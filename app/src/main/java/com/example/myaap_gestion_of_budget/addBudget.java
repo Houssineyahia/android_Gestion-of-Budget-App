@@ -83,14 +83,16 @@ public class addBudget extends AppCompatActivity {
 
                 mDatabase.child(Id).child("Id").setValue(Id);
                 mDatabase.child(Id).child("Group").setValue(getIntent().getStringExtra("groupid"));
-                mDatabase.child(Id).child("Amount").setValue(titleD);
+                mDatabase.child(Id).child("Amount").setValue(amount);
                 mDatabase.child(Id).child("Start date").setValue(startDate);
                 mDatabase.child(Id).child("End date").setValue(endDate);
-                mDatabase.child(Id).child("Title").setValue(amount);
+                mDatabase.child(Id).child("Title").setValue(titleD);
 
 
                 Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
-
+                Intent actionInt = new Intent(this , Add_Activity.class);
+                actionInt.putExtra("Budgetid" , Id);
+                startActivity(actionInt);
                 // clear all fields
                 title.getText().clear();
                 start_Date.getText().clear();
@@ -150,11 +152,7 @@ public class addBudget extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
-                        Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
+
 
                     case R.id.profil:
                         startActivity(new Intent(getApplicationContext(),Profil.class));

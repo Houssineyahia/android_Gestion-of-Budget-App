@@ -4,14 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:gravity="center"
     >
 
 
     <LinearLayout
         android:layout_width="370dp"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
+=======
+        android:layout_height="70dp"
+>>>>>>> younesbranch
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/menuradius"
@@ -47,7 +50,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="TextView"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
 
             <TextView
@@ -70,6 +73,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="TextView"
+<<<<<<< HEAD
+=======
+            android:textSize="18dp"
+>>>>>>> younesbranch
             android:textColor="@color/black"
             android:textSize="24sp"
 
