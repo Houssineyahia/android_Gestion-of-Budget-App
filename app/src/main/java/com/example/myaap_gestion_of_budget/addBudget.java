@@ -83,10 +83,10 @@ public class addBudget extends AppCompatActivity {
 
                 mDatabase.child(Id).child("Id").setValue(Id);
                 mDatabase.child(Id).child("Group").setValue(getIntent().getStringExtra("groupid"));
-                mDatabase.child(Id).child("Amount").setValue(titleD);
+                mDatabase.child(Id).child("Amount").setValue(amount);
                 mDatabase.child(Id).child("Start date").setValue(startDate);
                 mDatabase.child(Id).child("End date").setValue(endDate);
-                mDatabase.child(Id).child("Title").setValue(amount);
+                mDatabase.child(Id).child("Title").setValue(titleD);
 
 
                 Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
