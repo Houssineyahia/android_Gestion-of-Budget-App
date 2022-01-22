@@ -162,7 +162,6 @@ public class Dashboard extends AppCompatActivity  {
                         handlanychange();
                        // budget = mystr.toString();
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
 
@@ -204,7 +203,6 @@ public class Dashboard extends AppCompatActivity  {
                                 databasereference.child("Budget").child(bdgid).child("Amount").setValue(some);
                                 handlanychange();
                             }else{
-
                             }
                         }
                         @Override
@@ -229,11 +227,8 @@ public class Dashboard extends AppCompatActivity  {
                 if(snapshot.exists()){
                     for(DataSnapshot sp : snapshot.getChildren()){
                         balance.setText(sp.child("Amount").getValue().toString());
-
                     }
-
                 }else{
-
                 }
             }
             @Override
