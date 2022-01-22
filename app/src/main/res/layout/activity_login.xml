@@ -57,6 +57,7 @@
         android:textAlignment="viewStart"
         android:textColor="@color/black" />
 
+
     <Button
         android:id="@+id/Connect_Btn"
         android:layout_width="160dp"
@@ -65,7 +66,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="129dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="122dp"
         android:background="@drawable/radius"
         android:text="log in"
@@ -74,15 +75,15 @@
 
     <TextView
         android:id="@+id/reset_passwds"
-        android:layout_width="181dp"
-        android:layout_height="34dp"
+        android:layout_width="193dp"
+        android:layout_height="32dp"
         android:layout_below="@+id/authent"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="54dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="290dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="163dp"
         android:text="Password forgotten ?"
         android:textColor="#1475D6"
         tools:textStyle="bold" />
@@ -93,14 +94,12 @@
         android:layout_height="36dp"
         android:layout_below="@+id/authent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="451dp"
+        android:layout_marginTop="509dp"
         android:layout_marginEnd="65dp"
-        android:layout_marginBottom="-2dp"
         android:text="You don't have account ? Join us !"
         android:textColor="@color/black"
-        android:textStyle="bold"
         android:textSize="20dp"
-      />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -137,6 +136,19 @@
         android:layout_marginStart="126dp"
         android:layout_marginTop="18dp"
         app:srcCompat="@drawable/logo" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="243dp"
+        android:layout_height="34dp"
+        android:layout_above="@+id/Connect_Btn"
+        android:layout_below="@+id/passwd"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="69dp"
+        android:text="I'm not Robot"
+        android:textSize="20dp" />
 
 </RelativeLayout>
 

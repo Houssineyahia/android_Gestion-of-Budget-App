@@ -147,7 +147,6 @@ public class GroupActions extends AppCompatActivity {
     public void onBackPressed() {
         // disable going back to the MainActivity
         Toast.makeText(GroupActions.this, "hanta rja3tu ", Toast.LENGTH_SHORT).show();
-
         finish();
     }
 }

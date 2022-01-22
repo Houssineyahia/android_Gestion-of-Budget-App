@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item app:showAsAction="always"
+        android:title="menu_top"
+        android:icon="@drawable/icon_menu_top">
+        <menu>
+            <item
+                android:id="@+id/change_password"
+                android:title="change password"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/logout"
+                android:title="logout"
+                app:showAsAction="never"/>
+
+        </menu>
+
+
+
+
+
+    </item>
+
+</menu>

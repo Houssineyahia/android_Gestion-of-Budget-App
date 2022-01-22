@@ -9,37 +9,35 @@
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="95dp"
+        android:layout_width="408dp"
+        android:layout_height="72dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/thebigdiv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.571">
 
 
         <Spinner
             android:id="@+id/datePicker"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:background="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/silver"
             android:gravity="center"
-            android:textAlignment="center"
-
-            />
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/budgetspinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/black"
+            android:layout_marginRight="10dp"
+            android:background="@color/silver"
             android:gravity="center"
-            android:textAlignment="center"
-
-
-            />
+            android:textAlignment="center" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -47,9 +45,9 @@
         android:id="@+id/thebigdiv"
         android:layout_width="381dp"
         android:layout_height="636dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent">
 
 
@@ -69,7 +67,7 @@
             <LinearLayout
                 android:id="@+id/budgetZone"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/button_bg"
                 android:orientation="horizontal">
@@ -78,7 +76,7 @@
                 <LinearLayout
                     android:id="@+id/budgetdiv"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="90dp"
                     android:layout_weight="2"
                     android:orientation="vertical">
 
@@ -94,7 +92,7 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/balance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -135,7 +133,7 @@
             <LinearLayout
                 android:id="@+id/expence"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
 
@@ -143,7 +141,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="90dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/radius"
@@ -212,7 +210,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="90dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
 
@@ -220,7 +218,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:layout_weight="1"
                         android:background="@drawable/radius2"
                         android:orientation="vertical"
@@ -295,12 +293,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/amounth"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="+Amounth"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    >
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/addbdg"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    >
+
+                </Button>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/warning" />
 
                 <TextView
@@ -320,9 +352,9 @@
                     android:gravity="right"
                     android:paddingTop="2dp"
                     android:paddingRight="10dp"
-                    android:text="20DH"
+                    android:text="10DH"
                     android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textSize="20dp" />
 
             </LinearLayout>
 
@@ -342,18 +374,17 @@
                     android:paddingTop="10dp"
                     android:text="Transaction :"
                     android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:paddingTop="2dp"
                     android:paddingRight="10dp"
                     android:text="-20DH"
                     android:textColor="@color/reed"
-                    android:textSize="24dp" />
+                    android:textSize="20dp" />
 
             </LinearLayout>
 
@@ -364,26 +395,10 @@
                 android:layout_height="300dp"
 
                 />
-
-
         </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/naveba"
-        app:itemIconTint="@color/icons_color"
-        app:itemRippleColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

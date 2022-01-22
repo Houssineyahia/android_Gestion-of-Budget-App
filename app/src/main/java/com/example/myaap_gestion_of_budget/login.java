@@ -1,10 +1,12 @@
 package com.example.myaap_gestion_of_budget;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.example.myaap_gestion_of_budget.models.User;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,15 +33,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
     //private EditText email1, pswd;
-   // private Button Connect_Btn;
-   // private FirebaseAuth mAuth;
+    // private Button Connect_Btn;
+    // private FirebaseAuth mAuth;
     //private TextView join;
 
-   public EditText inputEmail, inputPassword;
+    public EditText inputEmail, inputPassword;
     private Button btnSignup;
     private FirebaseAuth mAuth;
     private TextView btnLogin;
-    DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    CheckBox checkBox;
+    GoogleApiClient googleApiClient;
+    String Sitekey = "6Ldjg90dAAAAANay5R-R-QlnhK2Km_MRBGQEd85E";
+    DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +57,6 @@ public class login extends AppCompatActivity {
         btnLogin = findViewById(R.id.joinus);
         mAuth = FirebaseAuth.getInstance();
 
-
-
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,13 +64,6 @@ public class login extends AppCompatActivity {
             }
         });
 
-     /*   btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-            }
-        });
-        */
 
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +107,7 @@ public class login extends AppCompatActivity {
         });
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -124,127 +125,13 @@ public class login extends AppCompatActivity {
         if(username.equals("none")){
             //user id logged in and so move to mainActivity
 
-        }
-        else{
+        }else{
             startActivity(new Intent(login.this, Listegroup.class));
 
         }
     }
 
+
 }
-
-
-               //progressBar.setVisibility(View.VISIBLE);
-
-                /*/authenticate user
-                mAuth.signInWithEmailAndPassword(emailString,passwordString)
-                        .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-
-                                if (!task.isSuccessful()) {
-                                    // there was an error
-                                    Toast.makeText(login.this,"error",Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Intent intent = new Intent(login.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                        });
-            }
-        });
-    }
-}
-
-
-
-
-
-        /*
-
-        Connect_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(login.this, MainActivity.class);
-
-            }
-        });
-        join.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(login.this,Sign_Up.class);
-                startActivity(intent);
-            }
-        });
-        Connect_Btn.setOnClickListener(new View.OnClickListener() {
-                                           @Override
-                                           public void onClick(View v) {
-                                               String emailString = email1.getText().toString();
-                                               String passwordString = pswd.getText().toString();
-                                               if (TextUtils.isEmpty(emailString)) {
-                                                   email1.setError("Email is required");
-                                               }
-                                               if (TextUtils.isEmpty(passwordString)) {
-                                                   pswd.setError("passwd is required");
-                                               } else {
-
-                                                   mAuth.signInWithEmailAndPassword(emailString, passwordString)
-                                                           .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
-                                                               @Override
-                                                               public void onComplete(@NonNull Task<AuthResult> task) {
-                                                                   if (!task.isSuccessful()) {
-                                                                       // there was an error
-                                                                       Toast.makeText(login.this, "error", Toast.LENGTH_SHORT).show();
-                                                                   } else {
-                                                                       Intent intent = new Intent(login.this, MainActivity.class);
-                                                                       startActivity(intent);
-                                                                       finish();
-                                                                   }
-                                                               }
-                                                           });
-                                               }
-                                           });
-                                       }
-    }
-
-
-
-
-
-
-
-
-/*
-                    databasereference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull  DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.hasChild(emailString)){
-                                 String getPassword=dataSnapshot.child(emailString).child(passwordString).getValue(String.class);
-                                if(getPassword.equals(passwordString)){
-                                    Toast.makeText(login.this,"success",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(login.this,MainActivity.class));
-                                    finish();
-                                }else{
-                                    Toast.makeText(login.this,"wrong password",Toast.LENGTH_SHORT).show();
-                                }
-                            }else{
-                                Toast.makeText(login.this,"wrong",Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull  DatabaseError databaseError) {
-
-                        }
-                    });
-
-                }
-            }
-        });*/
 
 

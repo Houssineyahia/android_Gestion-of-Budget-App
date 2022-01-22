@@ -38,6 +38,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     ProgressDialog progress;
     private static final int RQ_CODE_EDITION = 1;
+    Button bt;
 
 
 
@@ -46,6 +47,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listegroup);
+
 
         myRecycle = findViewById(R.id.recycleview);
         myRecycle.setHasFixedSize(true);

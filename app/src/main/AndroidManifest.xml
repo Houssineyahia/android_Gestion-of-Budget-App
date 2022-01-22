@@ -2,18 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myaap_gestion_of_budget">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAAP_GESTION_OF_BUDGET">
-        <activity android:name=".Dashboard"
-            android:exported="true"/>
+        <activity android:name=".ChnagePassword"></activity>
+        <activity android:name=".Add_Activity" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="true" />
         <activity
             android:name=".addBudget"
             android:exported="true" />
@@ -33,29 +36,29 @@
             tools:ignore="DuplicateActivity" />
         <activity
             android:name=".Listegroup"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".MainActivit"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".Groupinfo"
             android:exported="true" />
         <activity
             android:name=".Profil"
             android:exported="true" />
-        <activity android:name=".GroupActions" android:exported="true" />
+        <activity
+            android:name=".GroupActions"
+            android:exported="true" />
         <activity android:name=".Sign_Up" />
         <activity android:name=".login" />
         <activity
             android:name=".Start"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
