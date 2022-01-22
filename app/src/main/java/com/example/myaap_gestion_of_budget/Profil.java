@@ -128,7 +128,7 @@ public class Profil extends AppCompatActivity {
                     Lname.setText(Lname1_db);
                     Phone.setText(Phone_db);
                     Email.setText(Email_db);
-                    //Age.setText(String.valueOf());
+                    Age.setText(Age_db);
 
 
                 }
@@ -170,10 +170,7 @@ public class Profil extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                   
 
                     case R.id.profil:
                         return true;
