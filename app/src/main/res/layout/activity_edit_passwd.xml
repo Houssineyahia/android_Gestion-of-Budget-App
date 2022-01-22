@@ -145,7 +145,3 @@
         app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
-
-
-
-
