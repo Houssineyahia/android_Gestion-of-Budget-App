@@ -27,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,6 +46,7 @@ public class Dashboard extends AppCompatActivity  {
     SessionManagement sessionManagement;
     //TextView exprncechanetest = findViewById(R.id.textView5);
     private String  budget = "none";
+    private String idbudget = "none";
     ArrayList<String> allbudgets = new ArrayList<String>();
     private Intent intent = getIntent();
     public ArrayList<MenuClass> initData(){
@@ -112,6 +114,14 @@ public class Dashboard extends AppCompatActivity  {
         spinner.setAdapter(adapter);
 
 
+
+
+
+
+
+
+
+
         //////---------------------Get all Budget of group in allbudgets arrayliste ------------------- //////
 
         databasereference.child("Budget").orderByChild("Group").equalTo(getIntent().getStringExtra("groupid")).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -159,8 +169,25 @@ public class Dashboard extends AppCompatActivity  {
                         Object mystr = parent.getItemAtPosition(position);
                         budget = mystr.toString();
                         Toast.makeText(getApplicationContext(), "Selected Employee: " + budget ,Toast.LENGTH_SHORT).show();
+
+                        databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists()){
+                                    for(DataSnapshot sp : snapshot.getChildren()){
+                                        idbudget = sp.child("Id").getValue().toString();
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+
+                        });
+
                         handlanychange();
-                       // budget = mystr.toString();
                     }
 
                     @Override
@@ -188,7 +215,7 @@ public class Dashboard extends AppCompatActivity  {
                 }else{
                     //Toast.makeText(getApplicationContext(), "this group has no budget " + budget + " " + amounth.getText().toString() ,Toast.LENGTH_SHORT).show();
 
-                  databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
+                    databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int amt = Integer.valueOf(amounth.getText().toString());
@@ -215,7 +242,22 @@ public class Dashboard extends AppCompatActivity  {
             }
         });
         ///////////------------------End here ---------------------------///
+
+        //------------floating btn to add activity -------------------//
+        FloatingActionButton addactivity = findViewById(R.id.toAddactivity);
+
+        addactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Selected Employee: " + idbudget  ,Toast.LENGTH_SHORT).show();
+                Intent actionInt = new Intent(Dashboard.this , Add_Activity.class);
+                actionInt.putExtra("Budgetid" , idbudget);
+                startActivity(actionInt);
+            }
+        });
     }
+
+
 
     public  void handlanychange(){
 
