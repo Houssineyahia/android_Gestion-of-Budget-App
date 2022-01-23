@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAAP_GESTION_OF_BUDGET">
         <activity android:name=".ChnagePassword"></activity>
-        <activity android:name=".Add_Activity" />
+        <activity android:name=".Start" />
         <activity
             android:name=".Dashboard"
             android:exported="true" />
@@ -52,7 +52,7 @@
         <activity android:name=".Sign_Up" />
         <activity android:name=".login" />
         <activity
-            android:name=".Start"
+            android:name=".Add_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
