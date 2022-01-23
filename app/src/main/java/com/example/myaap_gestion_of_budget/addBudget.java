@@ -99,9 +99,6 @@ public class addBudget extends AppCompatActivity {
                 startActivity(actiongroupe);
 
                 //Budget id
-                Intent actionInt = new Intent(this , Add_Activity.class);
-                actionInt.putExtra("Budgetid" , Id);
-                startActivity(actionInt);
                 // clear all fields
                 title.getText().clear();
                 start_Date.getText().clear();
