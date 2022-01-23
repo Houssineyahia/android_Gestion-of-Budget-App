@@ -252,6 +252,7 @@ public class Dashboard extends AppCompatActivity  {
                 Toast.makeText(getApplicationContext(), "Selected Employee: " + idbudget  ,Toast.LENGTH_SHORT).show();
                 Intent actionInt = new Intent(Dashboard.this , Add_Activity.class);
                 actionInt.putExtra("Budgetid" , idbudget);
+                actionInt.putExtra("idgroupe",getIntent().getStringExtra("groupid"));
                 startActivity(actionInt);
             }
         });

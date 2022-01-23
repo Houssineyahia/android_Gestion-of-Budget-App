@@ -97,7 +97,7 @@ public class Add_Activity extends AppCompatActivity {
                         String f=getTodaysDate();
                         mDatabase.child(Id).child("date").setValue(f);
                         mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
-                       mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
+                        mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
                         //spinner
 
 
@@ -118,24 +118,26 @@ public class Add_Activity extends AppCompatActivity {
 
         String idg=getIntent().getStringExtra("idgroupe");
 
-        spinnerRef=FirebaseDatabase.getInstance().getReference("group_enrolments");
-        spinnerRef.addValueEventListener(new ValueEventListener() {
+       spinnerRef=FirebaseDatabase.getInstance().getReference("group_enrolments");
+        spinnerRef.child(idg).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                //ArrayList<String> list=new ArrayList<String>();
-                for(DataSnapshot item:snapshot.getChildren()){
-                   if(item.getKey().equals(idg)) {
-                        spinnerList.add(item.getValue().toString().substring(1, item.getValue().toString().indexOf('=')));
-                   }
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //Log.i("44",snapshot.getChildren().toString());
+                spinnerList.clear();
+                for (DataSnapshot data: snapshot.getChildren()) {
+                   // Log.i("22" , data.getKey());
+                    spinnerList.add(data.getKey());
                 }
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(@NonNull  DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+        //spinnerList.add(item.getValue().toString().substring(1, item.getValue().toString().indexOf('=')));
+        adapter.notifyDataSetChanged();
         spinner1.setAdapter(adapter);
 
     }

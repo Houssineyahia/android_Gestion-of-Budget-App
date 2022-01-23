@@ -29,7 +29,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/group"
-            android:layout_width="wrap_content"
+            android:layout_width="340dp"
             android:layout_height="440dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="44dp"
                 android:fontFamily="sans-serif-light"
                 android:paddingLeft="30px"
                 android:paddingTop="20px"
@@ -135,17 +135,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Null"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/black"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.119" />
+                app:layout_constraintVertical_bias="0.137" />
 
             <Button
                 android:id="@+id/button1"
