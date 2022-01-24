@@ -203,6 +203,11 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
         Intent actionInt = new Intent(this , GroupActions.class);
         actionInt.putExtra("GroupId" , selected.getId());
         startActivity(actionInt);
+        //groupe id
+        // String tt=getIntent().getStringExtra("groupid");
+        Intent actiongroupe = new Intent(this , Add_Activity.class);
+        actiongroupe.putExtra("idgroupe" ,selected.getId());
+        startActivity(actiongroupe);
 
     }
 }
