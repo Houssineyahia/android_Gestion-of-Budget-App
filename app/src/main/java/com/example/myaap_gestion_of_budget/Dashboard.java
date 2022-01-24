@@ -51,20 +51,7 @@ public class Dashboard extends AppCompatActivity  {
     private String idbudget = "none";
     ArrayList<String> allbudgets = new ArrayList<String>();
     private Intent intent = getIntent();
-    public ArrayList<MenuClass> initData(){
-        Resources res = getResources();
-        final String[] libelles =  res.getStringArray(R.array.Menu);
-        final String[] prix = res.getStringArray(R.array.prix);
 
-        ArrayList<MenuClass> liste2;
-        liste2 = new ArrayList<>();
-        for (int i=0; i<libelles.length; ++i) {
-            liste2.add(new MenuClass(libelles[i], prix[i] ));
-        }
-
-        return liste2;
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,9 +89,6 @@ public class Dashboard extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        //String groupid = intent.getStringExtra("groupid");
-        //liste = new ArrayList<>();
-        //liste = initData();
         ListView lv = (ListView) findViewById(android.R.id.list);
         adapter = new MenuListeAdapter(this,liste);
         lv.setAdapter(adapter);
@@ -129,10 +113,8 @@ public class Dashboard extends AppCompatActivity  {
         databasereference.child("Budget").orderByChild("Group").equalTo(getIntent().getStringExtra("groupid")).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                allbudgets.clear();
-                if(snapshot.exists()){
 
-                    adapter.notifyDataSetChanged();
+                if(snapshot.exists()){
                     for(DataSnapshot sp : snapshot.getChildren()){
                         //Log.i("22222" , sp.child("Title").getValue().toString());
                         allbudgets.add(sp.child("Title").getValue().toString());
@@ -252,7 +234,7 @@ public class Dashboard extends AppCompatActivity  {
         addactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Selected Employee: " + idbudget  ,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Selected Employee: " + idbudget  ,Toast.LENGTH_SHORT).show();
                 Intent actionInt = new Intent(Dashboard.this , Add_Activity.class);
                 actionInt.putExtra("Budgetid" , idbudget);
                 actionInt.putExtra("idgroupe",getIntent().getStringExtra("groupid"));
@@ -285,7 +267,7 @@ public class Dashboard extends AppCompatActivity  {
         });
 
 
-        if(!idbudget.equals("none")){
+        if(!budget.equals("none")){
             liste.clear();
             adapter.notifyDataSetChanged();
             Toast.makeText(getApplicationContext(), "The Id: " + budget  ,Toast.LENGTH_SHORT).show();
@@ -343,6 +325,11 @@ public class Dashboard extends AppCompatActivity  {
 
 
 
+        }else{
+            liste.clear();
+            adapter.notifyDataSetChanged();
+            balance.setText("0");
+            transaction.setText("0");
         }
 
 
