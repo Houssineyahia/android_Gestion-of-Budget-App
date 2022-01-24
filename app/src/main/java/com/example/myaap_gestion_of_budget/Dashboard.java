@@ -312,6 +312,10 @@ public class Dashboard extends AppCompatActivity  {
 
 
 
+                    }else{
+                        
+                        balance.setText("0");
+                        transaction.setText("0");
                     }
                 }
 
@@ -321,9 +325,6 @@ public class Dashboard extends AppCompatActivity  {
                 }
 
             });
-
-
-
 
         }else{
             liste.clear();
