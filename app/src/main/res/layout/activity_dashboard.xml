@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
-                        android:text="500 DH"
+                        android:text="0 DH"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="30dp" />
@@ -179,7 +179,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:paddingTop="20dp"
-                                android:text="2030 DH"
+                                android:text="0 DH"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="22dp" />
@@ -255,7 +255,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_horizontal"
                                     android:paddingTop="20dp"
-                                    android:text="2030 DH"
+                                    android:text="0 DH"
                                     android:textAlignment="center"
                                     android:textColor="@color/white"
                                     android:textSize="20dp" />
@@ -347,7 +347,7 @@
                     android:gravity="right"
                     android:paddingTop="2dp"
                     android:paddingRight="10dp"
-                    android:text="10DH"
+                    android:text="0DH"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
 
@@ -372,14 +372,15 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/transaction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:paddingRight="10dp"
-                    android:text="-20DH"
+                    android:text="0DH"
                     android:textColor="@color/reed"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 

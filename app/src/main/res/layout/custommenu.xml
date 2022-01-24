@@ -45,6 +45,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:paddingTop="2dp"
+                android:textColor="@color/black"
+                android:text="TextView"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
                 android:textColor="@color/black"
                 android:text="TextView"
                 android:textSize="15dp" />
@@ -55,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingTop="2dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="23/10/2001"
@@ -63,19 +75,36 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/leprix"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="TextView"
-            android:textSize="18dp"
-            android:textColor="@color/black"
 
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:orientation="vertical"
 
-            />
+            >
+            <TextView
+                android:id="@+id/leprix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="18dp"
+                android:textColor="@color/reed"
+                />
 
+            <TextView
+                android:id="@+id/whobuy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

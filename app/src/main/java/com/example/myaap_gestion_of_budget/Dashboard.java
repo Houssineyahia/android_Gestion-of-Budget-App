@@ -36,10 +36,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Dashboard extends AppCompatActivity  {
     private GoogleApiClient mGoogleApiClient;
-    private ArrayList<MenuClass> liste;
+    private ArrayList<MenuClass> liste = new ArrayList<>();
     private ArrayAdapter adapter;
     private static final int RQ_CODE_EDITION = 1;
     DatabaseReference databasereference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
@@ -101,8 +103,8 @@ public class Dashboard extends AppCompatActivity  {
         setContentView(R.layout.activity_dashboard);
 
         //String groupid = intent.getStringExtra("groupid");
-        liste = new ArrayList<>();
-        liste = initData();
+        //liste = new ArrayList<>();
+        //liste = initData();
         ListView lv = (ListView) findViewById(android.R.id.list);
         adapter = new MenuListeAdapter(this,liste);
         lv.setAdapter(adapter);
@@ -130,6 +132,7 @@ public class Dashboard extends AppCompatActivity  {
                 allbudgets.clear();
                 if(snapshot.exists()){
 
+                    adapter.notifyDataSetChanged();
                     for(DataSnapshot sp : snapshot.getChildren()){
                         //Log.i("22222" , sp.child("Title").getValue().toString());
                         allbudgets.add(sp.child("Title").getValue().toString());
@@ -168,7 +171,6 @@ public class Dashboard extends AppCompatActivity  {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         Object mystr = parent.getItemAtPosition(position);
                         budget = mystr.toString();
-                        Toast.makeText(getApplicationContext(), "Selected Employee: " + budget ,Toast.LENGTH_SHORT).show();
 
                         databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -176,6 +178,8 @@ public class Dashboard extends AppCompatActivity  {
                                 if(snapshot.exists()){
                                     for(DataSnapshot sp : snapshot.getChildren()){
                                         idbudget = sp.child("Id").getValue().toString();
+                                        //Toast.makeText(getApplicationContext(), "Selected Employee: " + idbudget ,Toast.LENGTH_SHORT).show();
+
                                     }
                                 }
                             }
@@ -186,7 +190,7 @@ public class Dashboard extends AppCompatActivity  {
                             }
 
                         });
-
+                        Toast.makeText(getApplicationContext(), "first " + budget ,Toast.LENGTH_SHORT).show();
                         handlanychange();
                     }
                     @Override
@@ -221,6 +225,7 @@ public class Dashboard extends AppCompatActivity  {
                             int oldamt ;
                             String bdgid ="null" ;
                             int some=100;
+
                             if(snapshot.exists()){
                                 for(DataSnapshot sp : snapshot.getChildren()){
                                     bdgid = sp.child("Id").getValue().toString();
@@ -261,7 +266,7 @@ public class Dashboard extends AppCompatActivity  {
     public  void handlanychange(){
 
         TextView balance = findViewById(R.id.balance);
-
+        TextView transaction = findViewById(R.id.transaction);
 
         databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -269,7 +274,7 @@ public class Dashboard extends AppCompatActivity  {
 
                 if(snapshot.exists()){
                     for(DataSnapshot sp : snapshot.getChildren()){
-                        balance.setText(sp.child("Amount").getValue().toString());
+                        balance.setText(sp.child("Amount").getValue().toString() + " DH");
                     }
                 }else{
                 }
@@ -278,6 +283,67 @@ public class Dashboard extends AppCompatActivity  {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+
+
+        if(!idbudget.equals("none")){
+            liste.clear();
+            adapter.notifyDataSetChanged();
+            Toast.makeText(getApplicationContext(), "The Id: " + budget  ,Toast.LENGTH_SHORT).show();
+
+
+
+            databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        for(DataSnapshot sp : snapshot.getChildren()){
+                            idbudget = sp.child("Id").getValue().toString();
+
+
+                            databasereference.child("Activity").orderByChild("idbudget").equalTo(idbudget).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                    if(snapshot.exists()){
+                                        Log.i("22",snapshot.getValue().toString());
+                                        int some = 0;
+                                        for (DataSnapshot data: snapshot.getChildren()) {
+                                            liste.add(new MenuClass(data.child("activity").getValue().toString(),"- " + data.child("price").getValue().toString() + " DH" , data.child("date").getValue().toString() ,data.child("user").getValue().toString() , data.child("comment").getValue().toString()));
+                                            some = some + Integer.valueOf(data.child("price").getValue().toString());
+
+                                        }
+                                        transaction.setText("- " + String.valueOf(some));
+                                        Collections.reverse(liste);
+                                        Log.i("22",String.valueOf(liste.size()));
+                                        adapter.notifyDataSetChanged();
+                                    }
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+
+                        }
+
+
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+
+            });
+
+
+
+
+        }
 
 
     }
