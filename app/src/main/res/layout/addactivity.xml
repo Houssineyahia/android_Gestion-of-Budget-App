@@ -1,100 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add_Activity"
-    android:background="@color/white"
-    >
-
-    <EditText
-        android:id="@+id/comment"
-        android:layout_width="289dp"
-        android:layout_height="144dp"
-        android:layout_above="@+id/add_activity"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="35dp"
-        android:layout_weight="1"
-        android:background="@drawable/radius2"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:hint="comment"
-        android:padding="15dp" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/violet"
-        app:itemIconTint="@color/icons_color"
-        app:itemRippleColor="@color/grey"
-        app:menu="@menu/navigation"
-        >
+    android:background="@color/background"
+    tools:context=".Add_Activity">
 
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="379dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="380dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/background"
+            android:orientation="horizontal">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="63dp">
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="50px"
+                android:text="New Activity "
+                android:textColor="#777676"
+                android:textSize="20sp" />
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="100px"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:inputType="none"
-            android:text="select an activity" />
+            <Button
+                android:id="@+id/add_activity"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="30px"
+                android:text="Save"
+                app:backgroundTint="#C5C5C5" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="363dp"
+        android:layout_height="416dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="196dp"
+        android:background="@color/background"
+        android:foregroundGravity="center"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_activity"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="230dp"
-        android:layout_weight="1"
-        android:background="@drawable/radius2"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:hint="Price"
-        android:padding="15dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="363dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="198dp"
-        android:layout_height="56dp"
-        android:layout_above="@+id/editTextTextPersonName3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="57dp"
-        android:background="@drawable/bg_spinner_fruit_up"
-        android:dropDownVerticalOffset="40dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                android:layout_width="164dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="16dp"
 
-    <Button
-        android:id="@+id/add_activity"
-        android:layout_width="161dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="55dp"
-        android:text="Add" />
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="23dp"
+                android:background="@color/background"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/background"
+                app:boxStrokeColor="@color/background"
+                app:hintTextColor="#DD00BCD4"
+                app:layout_constraintEnd_toStartOf="@+id/spinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-</RelativeLayout>
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:layout_weight="1"
+                    android:background="@color/background"
+                    android:gravity="center"
+                    android:inputType="none"
+                    android:text="Category"
+                    android:textColor="@color/black"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="116dp"
+                android:layout_marginBottom="56dp"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="Price"
+                android:padding="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+            <EditText
+                android:id="@+id/comment"
+                android:layout_width="289dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginBottom="60dp"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="comment"
+                android:padding="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="144dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="52dp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
