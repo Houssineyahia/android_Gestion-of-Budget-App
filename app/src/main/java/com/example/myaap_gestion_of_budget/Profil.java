@@ -47,7 +47,7 @@ public class Profil extends AppCompatActivity {
         toedit = findViewById(R.id.toedit);
 
 
-        Full_name = findViewById(R.id.Full_name);
+       // Full_name = findViewById(R.id.Full_name);
         Fname = findViewById(R.id.Fname);
         Lname = findViewById(R.id.Lname);
         Uname = findViewById(R.id.Uname);
@@ -55,7 +55,7 @@ public class Profil extends AppCompatActivity {
         Phone = findViewById(R.id.Phone);
 
         Email = findViewById(R.id.Email);
-        Age = findViewById(R.id.Age);
+       // Age = findViewById(R.id.Age);
 
 
 
