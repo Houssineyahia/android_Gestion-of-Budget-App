@@ -61,7 +61,6 @@ public class Profil extends AppCompatActivity {
 
 
 
-
         DBRef = FirebaseDatabase.getInstance().getReference("users");
 
 
