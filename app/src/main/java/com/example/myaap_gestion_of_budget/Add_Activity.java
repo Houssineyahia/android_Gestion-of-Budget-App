@@ -79,8 +79,6 @@ public class Add_Activity extends AppCompatActivity {
         autoCompleteTextView.setAdapter(adapterItems);
         mDatabase = FirebaseDatabase.getInstance().getReference("Activity");
         String Id = mDatabase.push().getKey();
-        String a=comment.getText().toString(),b=txt1.getText().toString();
-
 
             autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -96,20 +94,14 @@ public class Add_Activity extends AppCompatActivity {
                             public void onClick(View v) {
                                 mDatabase.child(Id).child("ID").setValue(Id);
                                 mDatabase.child(Id).child("activity").setValue(item);
-                                if (b.isEmpty()) {
-                                mDatabase.child(Id).child("price").setValue("0");
-                                }else{
-                                    mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
-                                }
+                                mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
+
                                 String t = getIntent().getStringExtra("Budgetid");
                                 mDatabase.child(Id).child("idbudget").setValue(t);
                                 String f = getTodaysDate();
                                 mDatabase.child(Id).child("date").setValue(f);
-                                if (a.isEmpty()) {
-                                mDatabase.child(Id).child("comment").setValue("");}
-                                else{
-                                    mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
-                                }
+                                mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
+
                                 mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
                                 //spinner
 
