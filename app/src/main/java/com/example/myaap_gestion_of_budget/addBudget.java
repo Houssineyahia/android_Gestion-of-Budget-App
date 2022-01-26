@@ -94,9 +94,6 @@ public class addBudget extends AppCompatActivity {
                 Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
                 //groupe id
                // String tt=getIntent().getStringExtra("groupid");
-                Intent actiongroupe = new Intent(this , Add_Activity.class);
-                actiongroupe.putExtra("idgroupe" ,getIntent().getStringExtra("groupid"));
-                startActivity(actiongroupe);
 
                 //Budget id
                 // clear all fields
@@ -104,6 +101,12 @@ public class addBudget extends AppCompatActivity {
                 start_Date.getText().clear();
                 end_Date.getText().clear();
                 Amount.getText().clear();
+
+                Intent actiongroupe = new Intent(this , Dashboard.class);
+                actiongroupe.putExtra("groupid" ,getIntent().getStringExtra("groupid"));
+                startActivity(actiongroupe);
+
+
 
             }
         });

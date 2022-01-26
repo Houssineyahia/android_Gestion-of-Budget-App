@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Edit_Passwd"
-    android:background="@color/background">
+    android:background="@drawable/bckgroundshap">
 
 
     <TextView
@@ -22,19 +22,7 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="wrap_content"
-        android:layout_height="406dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="-24dp"
-        android:layout_marginTop="-277dp"
-        android:layout_marginEnd="0dp"
-        android:background="@color/violet"
-        android:rotation="-5" />
+
 
     <ImageView
         android:id="@+id/imageView2"

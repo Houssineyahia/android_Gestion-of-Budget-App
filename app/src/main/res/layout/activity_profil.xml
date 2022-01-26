@@ -4,34 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bckgroundshap"
     tools:context=".Profil">
 
-    <View
-        android:id="@+id/backgrondpr"
-        android:layout_width="835dp"
-        android:layout_height="404dp"
-        android:layout_marginBottom="112dp"
-        android:background="@color/violet"
-        android:rotation="-3"
-        app:layout_constraintBottom_toTopOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="807dp"
-        android:layout_height="302dp"
-        android:layout_marginBottom="130dp"
-        android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+
+
 
     <TextView
         android:id="@+id/Full_name"
@@ -238,22 +216,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
-
-
-
+        app:layout_constraintVertical_bias="0.835" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/violet"
+        android:background="@drawable/naveba"
         app:itemIconTint="@color/icons_color"
-        app:itemRippleColor="@color/grey"
+        app:itemRippleColor="@color/violet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 

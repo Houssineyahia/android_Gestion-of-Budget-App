@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivit"
-    android:background="@color/white"
+    android:background="@drawable/bckgroundshap"
     >
 
 
@@ -17,7 +17,6 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="35dp"
-        android:background="@color/white"
         >
 
         <ImageButton

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Add_group"
-    android:background="@color/white"
+    android:background="@drawable/bckgroundshap"
     >
 
 

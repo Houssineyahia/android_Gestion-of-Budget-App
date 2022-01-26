@@ -100,6 +100,8 @@ public class Add_Activity extends AppCompatActivity {
                         mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
                         //spinner
 
+                        Toast.makeText(Add_Activity.this, "Done ! ", Toast.LENGTH_SHORT).show();
+
 
 
                     }
