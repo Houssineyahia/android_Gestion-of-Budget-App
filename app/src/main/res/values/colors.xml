@@ -21,7 +21,10 @@
     <color name="pine">#25291C</color>
     <color name="crayola">#E6E49F</color>
 
-
+    <color name="colorPrimaryDark">#3262C4</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#C11515</color>
 
         <color name="grey">#E8E8E8</color>
 

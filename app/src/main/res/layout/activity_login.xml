@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login"
-    android:background="@color/background">
+    android:background="@drawable/background_login">
 
     <TextView
         android:id="@+id/authent"
@@ -15,7 +15,6 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-light"
-        android:text=""
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -23,27 +22,26 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="41dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/radius2"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
+        android:hint=" Username"
         android:inputType="text"
-        android:padding="25dp"
-        android:hint=" username"
+        android:padding="15dp"
         android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/passwd"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
         android:layout_below="@id/username"
         android:layout_centerInParent="true"
         android:layout_marginStart="10dp"
@@ -51,27 +49,43 @@
         android:background="@drawable/radius2"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="20dp"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:padding="25dp"
-        android:hint="Mot de passe"
+        android:padding="15dp"
         android:textAlignment="viewStart"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        app:passwordToggleEnabled="true" />
 
 
     <Button
         android:id="@+id/Connect_Btn"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_below="@+id/reset_passwds"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="122dp"
-        android:background="@drawable/radius"
-        android:text="log in"
-        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="29dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="18dp"
         android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="243dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/passwd"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="82dp"
+        android:fontFamily="monospace"
+        android:text="I'm not Robot"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/reset_passwds"
@@ -80,51 +94,30 @@
         android:layout_below="@+id/authent"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="54dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="216dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="163dp"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="monospace"
         android:text="Password forgotten ?"
-        android:textColor="#1475D6"
+        android:textColor="@color/white"
         tools:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/joinus"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/authent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="509dp"
+        android:layout_marginTop="507dp"
         android:layout_marginEnd="65dp"
+        android:fontFamily="monospace"
         android:text="You don't have account ? Join us !"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textColor="@color/grey"
+        android:textSize="18.5dp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="107dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="22dp"
-        />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="wrap_content"
-        android:layout_height="406dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="-24dp"
-        android:layout_marginTop="-277dp"
-        android:layout_marginEnd="0dp"
-        android:background="@color/violet"
-        android:rotation="-5" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -133,22 +126,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="43dp"
         app:srcCompat="@drawable/logo" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_above="@+id/Connect_Btn"
-        android:layout_below="@+id/passwd"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="69dp"
-        android:text="I'm not Robot"
-        android:textSize="20dp" />
 
 </RelativeLayout>
 
