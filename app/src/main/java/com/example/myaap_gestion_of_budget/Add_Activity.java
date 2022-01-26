@@ -80,37 +80,46 @@ public class Add_Activity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("Activity");
         String Id = mDatabase.push().getKey();
 
+            autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                btn2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mDatabase.child(Id).child("ID").setValue(Id);
-                        mDatabase.child(Id).child("activity").setValue(item);
-                        mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
-                        String t = getIntent().getStringExtra("Budgetid");
-                        mDatabase.child(Id).child("idbudget").setValue(t);
-                        String f=getTodaysDate();
-                        mDatabase.child(Id).child("date").setValue(f);
-                        mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
-                        mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
-                        //spinner
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String item = parent.getItemAtPosition(position).toString();
 
                         Toast.makeText(Add_Activity.this, "Done ! ", Toast.LENGTH_SHORT).show();
 
 
 
-                    }
-                });
+                        btn2.setBackgroundColor(0xFF1B70B3);
+                        btn2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                mDatabase.child(Id).child("ID").setValue(Id);
+                                mDatabase.child(Id).child("activity").setValue(item);
+                                mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
+
+                                String t = getIntent().getStringExtra("Budgetid");
+                                mDatabase.child(Id).child("idbudget").setValue(t);
+                                String f = getTodaysDate();
+                                mDatabase.child(Id).child("date").setValue(f);
+                                mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
+
+                                mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
+                                //spinner
+
+                                comment.getText().clear();
+                                dropdwon.getText().clear();
+                                txt1.getText().clear();
+                                Toast.makeText(Add_Activity.this, "Activity saved !", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
 
-            }
+                }
 
-        });
+            });
+
+
     }
     @Override
     protected void onStart()

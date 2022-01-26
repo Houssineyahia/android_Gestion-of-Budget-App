@@ -7,6 +7,9 @@
     android:background="@drawable/bckgroundshap"
     >
 
+
+
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="80dp"
@@ -32,7 +35,7 @@
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="527dp"
         android:fontFamily="serif"
-        android:text="Bienvenue dans Jayby !"
+        android:text="   Welcome to  Jayby !"
         android:textColor="@color/black"
         android:textSize="27sp"
         android:textStyle="bold"
@@ -50,10 +53,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="437dp"
-        android:text="Avec cette application , vous n'avez pas besoin d'etre un expert pour gerer votre argent .  Prenez le controle de votre Budget depuis votre appareil ."
+        android:text="Take control of your Budget from your device."
         android:textAlignment="center"
-        android:textColor="#D2121111"
-        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,6 +75,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/st2" />
+=======
+        app:layout_constraintVertical_bias="0.562" />
+>>>>>>> 0c00165c38684fb4b29bdb1f407894e6f8258b79
 
     <ImageView
         android:id="@+id/eclipse"
@@ -133,5 +140,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView12"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/dep" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
