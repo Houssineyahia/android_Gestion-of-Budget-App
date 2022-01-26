@@ -53,9 +53,9 @@ public class Profil extends AppCompatActivity {
         Uname = findViewById(R.id.Uname);
 
         Phone = findViewById(R.id.Phone);
+
         Email = findViewById(R.id.Email);
        // Age = findViewById(R.id.Age);
-
 
 
 
@@ -170,7 +170,7 @@ public class Profil extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                   
+
 
                     case R.id.profil:
                         return true;

@@ -75,6 +75,9 @@ public class addBudget extends AppCompatActivity {
             String endDate = end_Date.getText().toString();
             String amount = Amount.getText().toString();
 
+
+
+
             if (titleD.isEmpty() || endDate.isEmpty() || startDate.isEmpty() || amount.isEmpty()) {
                 Toast.makeText(addBudget.this, "Please fill the fields ", Toast.LENGTH_SHORT).show();
 
@@ -88,11 +91,14 @@ public class addBudget extends AppCompatActivity {
                 mDatabase.child(Id).child("End date").setValue(endDate);
                 mDatabase.child(Id).child("Title").setValue(titleD);
 
-
                 Toast.makeText(addBudget.this, "Budget id added !", Toast.LENGTH_SHORT).show();
-                Intent actionInt = new Intent(this , Add_Activity.class);
-                actionInt.putExtra("Budgetid" , Id);
-                startActivity(actionInt);
+                //groupe id
+               // String tt=getIntent().getStringExtra("groupid");
+                Intent actiongroupe = new Intent(this , Add_Activity.class);
+                actiongroupe.putExtra("idgroupe" ,getIntent().getStringExtra("groupid"));
+                startActivity(actiongroupe);
+
+                //Budget id
                 // clear all fields
                 title.getText().clear();
                 start_Date.getText().clear();

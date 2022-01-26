@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".Profil">
 
-        <View
-            android:id="@+id/backgrondpr"
-            android:layout_width="835dp"
-            android:layout_height="404dp"
-            android:layout_marginBottom="112dp"
-            android:background="@color/violet"
-            android:rotation="-3"
-            app:layout_constraintBottom_toTopOf="@+id/view3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
+    <View
+        android:id="@+id/backgrondpr"
+        android:layout_width="835dp"
+        android:layout_height="404dp"
+        android:layout_marginBottom="112dp"
+        android:background="@color/violet"
+        android:rotation="-3"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/view3"
-        android:layout_width="826dp"
-        android:layout_height="440dp"
+        android:layout_width="807dp"
+        android:layout_height="302dp"
+        android:layout_marginBottom="130dp"
         android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,57 +34,57 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Abdellatif BOUZALIM"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:id="@+id/Full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Abdellatif BOUZALIM"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="149dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="28dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/manuser" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="149dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/manuser" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/abdellatifbouzalim_gmail_com"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="My email"
+
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Full_name" />
 
     <LinearLayout
-        android:layout_width="196dp"
-        android:layout_height="309dp"
+        android:layout_width="166dp"
+        android:layout_height="301dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
+        app:layout_constraintVertical_bias="0.668"
         tools:ignore="MissingConstraints">
 
 
         <TextView
-            android:id="@+id/firstnametext"
+            android:id="@+id/Fname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -95,7 +95,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/lastnametext"
+            android:id="@+id/Lname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -106,7 +106,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/usernametext"
+            android:id="@+id/Uname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -117,7 +117,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/phonetext"
+            android:id="@+id/Phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -128,7 +128,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/agetext"
+            android:id="@+id/Age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -142,8 +142,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="188dp"
-        android:layout_height="298dp"
+        android:layout_width="189dp"
+        android:layout_height="301dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -210,7 +210,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:drawableLeft="@drawable/ic_age_123_24"
-            android:text="  Age"
+            android:text="  Date of birth"
             android:textColor="@color/black"
             android:textSize="17dp"
             android:textStyle="bold" />
@@ -219,11 +219,11 @@
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
-        </LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+    </LinearLayout>
 
 
     <Button
@@ -238,14 +238,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.878" />
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/naveba"
+        android:background="@color/violet"
         app:itemIconTint="@color/icons_color"
         app:itemRippleColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"

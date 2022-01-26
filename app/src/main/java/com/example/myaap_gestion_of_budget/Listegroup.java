@@ -30,6 +30,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Listegroup extends AppCompatActivity implements groupAdapter.groupViewHolder.OnclickListener {
     RecyclerView myRecycle ;
@@ -168,6 +170,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
                                     liste.add(new GroupClass(String.valueOf(snapshot.child("Group Name").getValue()) , String.valueOf(snapshot.child("Group Admin").getValue()) , data.getKey() , String.valueOf(snapshot.child("Description").getValue()) ));
                                 }
                             }
+                            Collections.reverse(liste);
 
                             adapter.notifyDataSetChanged();
 

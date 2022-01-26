@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Add__ extends AppCompatActivity {
-    private Button button2;
+    private ImageView button2;
     EditText Groupname;
     EditText groupdescription;
     EditText grouptype;
