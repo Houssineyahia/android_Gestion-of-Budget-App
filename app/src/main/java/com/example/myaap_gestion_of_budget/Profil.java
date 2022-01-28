@@ -43,7 +43,7 @@ public class Profil extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
         SessionManagement sessionManagement=new SessionManagement(Profil.this) ;
         String username = sessionManagement.getSession();
-
+        Button chnpass = (Button) findViewById(R.id.changepass);
         toedit = findViewById(R.id.toedit);
 
 
@@ -80,45 +80,6 @@ public class Profil extends AppCompatActivity {
 
 
 
-                /* String input = Age_db;
-
-                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "dd/MM/yyyy" );
-                LocalDate localDate = LocalDate.parse( input , formatter );
-                int User_Year = localDate.getYear();
-                String adate = String.valueOf(User_Year);
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                Date MyAge1 = null;
-                try {
-                    MyAge1 = sdf.parse(Age_db);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                int TheY = MyAge1.getYear();
-
-                /* DateTimeFormatter f = DateTimeFormatter.ofPattern( "dd/mm/yyyy" ) ;
-
-                LocalDate ld = LocalDate.parse( Age_db , f ) ;
-                int Y_user =ld.getYear();
-
-                LocalDate localDate = LocalDate.now();
-                int year_syst = localDate.getYear();
-
-
-
-                int User_Age = year_syst - Y_user;
-
-
-                      */
-
-
-               /* int BDateToInt =Integer.parseInt(Age_db);;
-                int Y_user = BDateToInt.getYear() ;
-
-                Date d  =new Date();
-                int year_syst = d.getYear();
-                int User_Age = year_syst- Y_user;
-                   System.out.println(date.getYear());  // 2012
-*/
 
                 if (snapshot.exists() ) {
 
@@ -150,7 +111,13 @@ public class Profil extends AppCompatActivity {
 
             }});
 
-
+        chnpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity =  new Intent(getApplicationContext(),  Edit_Passwd.class);
+                startActivity(otherActivity);
+            }
+        });
 
 
 
