@@ -197,7 +197,7 @@ public class Dashboard extends AppCompatActivity  {
                 if(budget.equals("none")){
                     Toast.makeText(getApplicationContext(), "this  has no budget " ,Toast.LENGTH_SHORT).show();
 
-                }else{
+                    }else{
                     //Toast.makeText(getApplicationContext(), "this group has no budget " + budget + " " + amounth.getText().toString() ,Toast.LENGTH_SHORT).show();
 
                     databasereference.child("Budget").orderByChild("Title").equalTo(budget).addListenerForSingleValueEvent(new ValueEventListener() {

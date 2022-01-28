@@ -110,21 +110,23 @@ public class addBudget extends AppCompatActivity {
 
             }
         });
-        // calendar start day
-        start_Date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(addBudget.this,  new DatePickerDialog.OnDateSetListener(){
+
+                // calendar start day
+                start_Date.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(addBudget.this,  new DatePickerDialog.OnDateSetListener(){
 
 
-            @Override
-            public void onDateSet(DatePicker view , int year, int month, int day) {
-                month=month+1;
-                String date = day+"-"+month+"-"+year;
-                start_Date.setText(date);
-            }
-        },year,month,day);
-                datePickerDialog.show();
+                    @Override
+                    public void onDateSet(DatePicker view , int year, int month, int day) {
+                        month=month+1;
+                        String date = day+"-"+month+"-"+year;
+                        start_Date.setText(date);
+                    }
+                },year,month,day);
+                        datePickerDialog.show();
+
 
                 // calendar end day
                 end_Date.setOnClickListener(new View.OnClickListener() {

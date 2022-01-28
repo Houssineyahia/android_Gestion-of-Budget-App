@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckgroundshap"
+    android:background="@drawable/background_login"
     tools:context=".addBudget"
     >
 
@@ -13,23 +13,26 @@
         android:id="@+id/linearLayout"
         android:layout_width="384dp"
         android:layout_height="530dp"
+        android:background="@drawable/style_layout"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362"
+        app:layout_constraintVertical_bias="0.228"
         tools:ignore="MissingConstraints">
 
 
         <TextView
             android:id="@+id/namegroup"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
-            android:gravity="center"
+            android:layout_marginRight="100dp"
             android:ems="10"
+            android:fontFamily="monospace"
             android:inputType="number"
             android:text="Name Group"
             android:textColor="@color/violet"
@@ -47,10 +50,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="Amount In DH "
-            android:paddingLeft="5dp"
-            android:inputType="number" />
+            android:background="@drawable/radius2"
+            android:fontFamily="monospace"
+            android:hint="  Amount In DH "
+            android:inputType="number"
+            android:textStyle="bold" />
 
 
         <EditText
@@ -60,10 +64,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="Start Date "
-            android:paddingLeft="5dp"
-            android:inputType="date" />
+            android:background="@drawable/radius2"
+            android:fontFamily="monospace"
+            android:hint="  Start Date"
+            android:inputType="date"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/endDate"
@@ -72,10 +77,12 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="End Date "
-            android:paddingLeft="5dp"
-            android:inputType="date" />
+
+            android:background="@drawable/radius2"
+            android:fontFamily="monospace"
+            android:hint="  End Date "
+            android:inputType="date"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/title"
@@ -84,12 +91,13 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:background="@drawable/edit_text_style"
+            android:background="@drawable/radius2"
             android:ems="10"
+            android:fontFamily="monospace"
             android:gravity="start|top"
-            android:hint="Title"
-            android:inputType="textMultiLine" />
+            android:hint="  Title"
+            android:inputType="textMultiLine"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/add__Budget"
@@ -98,14 +106,15 @@
             android:layout_marginLeft="115dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/ciel"
+            android:background="@drawable/radius2"
+            android:fontFamily="monospace"
             android:text="Add Budget"
             android:textAllCaps="false"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
