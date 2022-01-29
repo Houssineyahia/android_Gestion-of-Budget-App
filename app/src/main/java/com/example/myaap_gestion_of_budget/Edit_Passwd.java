@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +38,32 @@ public class Edit_Passwd extends AppCompatActivity {
 
     DatabaseReference DBRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
 
+    SessionManagement sessionManagement;
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(Edit_Passwd.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(Edit_Passwd.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        return true;
+    }
+    //--------------------------end here----------------------------------------------------//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +76,7 @@ public class Edit_Passwd extends AppCompatActivity {
         Edit_passwd_btn = findViewById(R.id.Edit_passwd_btn);
         textView = findViewById(R.id.TextV1);
         mAuth = FirebaseAuth.getInstance();
-      SessionManagement sessionManagement=new SessionManagement(Edit_Passwd.this) ;
+       sessionManagement=new SessionManagement(Edit_Passwd.this) ;
         String username = sessionManagement.getSession();
 
 

@@ -31,11 +31,12 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:paddingLeft="50px"
+                android:paddingStart="2dp"
+                android:paddingEnd="50dp"
                 android:text="New Activity "
                 android:textColor="#777676"
                 android:textSize="20sp" />
@@ -44,8 +45,8 @@
                 android:id="@+id/add_activity"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="20px"
-                android:layout_marginRight="30px"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
                 android:text="Save"
                 app:backgroundTint="#C5C5C5" />
         </LinearLayout>

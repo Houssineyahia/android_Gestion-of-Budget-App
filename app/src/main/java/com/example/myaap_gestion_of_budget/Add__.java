@@ -2,6 +2,7 @@ package com.example.myaap_gestion_of_budget;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +45,36 @@ public class Add__ extends AppCompatActivity {
     DatabaseReference group_enrolments= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     DatabaseReference User_enrolments= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     DatabaseReference users= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    SessionManagement sessionManagement;
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(Add__.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(Add__.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(Add__.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+//--------------------------end here----------------------------------------------------//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +94,7 @@ public class Add__ extends AppCompatActivity {
         groupdescription = findViewById(R.id.editTextTextPersonName5);
         grouptype=findViewById(R.id.autoCompleteTextView) ;
         String Id = mDatabase.push().getKey();
-        SessionManagement sessionManagement=new SessionManagement(Add__.this) ;
+         sessionManagement=new SessionManagement(Add__.this) ;
         String username= sessionManagement.getSession();
 
 

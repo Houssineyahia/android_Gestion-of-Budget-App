@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -58,7 +59,7 @@ public class Add_Activity extends AppCompatActivity {
         comment=findViewById(R.id.comment);
         dropdwon = findViewById(R.id.autoCompleteTextView5);
 
-       //spinner
+        //spinner
         spinner1=findViewById(R.id.spinner);
 
 
@@ -66,9 +67,9 @@ public class Add_Activity extends AppCompatActivity {
         //spinenr
 
 
-         spinnerList=new ArrayList<>();
-         adapter=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item,spinnerList);
-         //spinner
+        spinnerList=new ArrayList<>();
+        adapter=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item,spinnerList);
+        //spinner
 
 
 
@@ -80,44 +81,49 @@ public class Add_Activity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("Activity");
         String Id = mDatabase.push().getKey();
 
-            autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String item = parent.getItemAtPosition(position).toString();
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
 
-                        Toast.makeText(Add_Activity.this, "Done ! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Add_Activity.this, "Done ! ", Toast.LENGTH_SHORT).show();
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH)+1;
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                btn2.setBackgroundColor(0xFF1B70B3);
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDatabase.child(Id).child("ID").setValue(Id);
+                        mDatabase.child(Id).child("activity").setValue(item);
+                        mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
+
+                        String t = getIntent().getStringExtra("Budgetid");
+                        mDatabase.child(Id).child("idbudget").setValue(t);
+                        String f = getTodaysDate();
+                        mDatabase.child(Id).child("date").setValue(f);
+                        mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
+                        mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
+                        mDatabase.child(Id).child("d").setValue(day);
+                        mDatabase.child(Id).child("m").setValue(day);
+                        mDatabase.child(Id).child("y").setValue(day);
+                        //spinner
+                        comment.getText().clear();
+                        dropdwon.getText().clear();
+                        txt1.getText().clear();
+                        Toast.makeText(Add_Activity.this, "Activity saved !", Toast.LENGTH_SHORT).show();
+                        Intent g=new Intent(Add_Activity.this,Dashboard.class);
+                        startActivity(g);
+                    }
+                });
 
 
+            }
 
-                        btn2.setBackgroundColor(0xFF1B70B3);
-                        btn2.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                mDatabase.child(Id).child("ID").setValue(Id);
-                                mDatabase.child(Id).child("activity").setValue(item);
-                                mDatabase.child(Id).child("price").setValue(txt1.getText().toString());
-
-                                String t = getIntent().getStringExtra("Budgetid");
-                                mDatabase.child(Id).child("idbudget").setValue(t);
-                                String f = getTodaysDate();
-                                mDatabase.child(Id).child("date").setValue(f);
-                                mDatabase.child(Id).child("comment").setValue(comment.getText().toString());
-
-                                mDatabase.child(Id).child("user").setValue(spinner1.getSelectedItem().toString());
-                                //spinner
-
-                                comment.getText().clear();
-                                dropdwon.getText().clear();
-                                txt1.getText().clear();
-                                Toast.makeText(Add_Activity.this, "Activity saved !", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-
-                }
-
-            });
+        });
 
 
     }
@@ -129,14 +135,14 @@ public class Add_Activity extends AppCompatActivity {
 
         String idg=getIntent().getStringExtra("idgroupe");
 
-       spinnerRef=FirebaseDatabase.getInstance().getReference("group_enrolments");
+        spinnerRef=FirebaseDatabase.getInstance().getReference("group_enrolments");
         spinnerRef.child(idg).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //Log.i("44",snapshot.getChildren().toString());
                 spinnerList.clear();
                 for (DataSnapshot data: snapshot.getChildren()) {
-                   // Log.i("22" , data.getKey());
+                    // Log.i("22" , data.getKey());
                     spinnerList.add(data.getKey());
                 }
                 adapter.notifyDataSetChanged();
@@ -166,7 +172,7 @@ public class Add_Activity extends AppCompatActivity {
 
     private String makeDateString(int day, int month, int year)
     {
-        return month + " " + day + " " + year;
+        return  day + " " +  month + " " + year;
     }
 
 

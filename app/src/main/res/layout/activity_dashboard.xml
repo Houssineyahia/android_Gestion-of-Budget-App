@@ -25,8 +25,8 @@
             android:id="@+id/datePicker"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
 
             android:background="@color/white"
 
@@ -37,7 +37,7 @@
             android:id="@+id/budgetspinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
 
 
             android:background="@color/background"
@@ -89,7 +89,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:paddingTop="5dp"
                         android:text="Balance"
                         android:textColor="@color/white"
@@ -124,7 +124,7 @@
                         android:layout_width="96dp"
                         android:layout_height="80dp"
                         android:layout_gravity="right"
-                        android:paddingRight="20dp"
+                        android:paddingEnd="20dp"
                         app:srcCompat="@drawable/budget" />
 
 
@@ -172,9 +172,9 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
                                 android:paddingTop="5dp"
-                                android:text="Expence"
+                                android:text="the rest "
                                 android:textColor="@color/white"
-                                android:textSize="20dp"
+                                android:textSize="20sp"
 
                                 />
 
@@ -245,10 +245,10 @@
                                 <TextView
                                     android:id="@+id/teiew2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:paddingLeft="10dp"
+                                    android:layout_height="26dp"
+                                    android:paddingStart="10dp"
                                     android:paddingTop="5dp"
-                                    android:text="Expence"
+                                    android:text="Expense"
                                     android:textColor="@color/white"
                                     android:textSize="20dp"
 
@@ -263,7 +263,7 @@
                                     android:text="0 DH"
                                     android:textAlignment="center"
                                     android:textColor="@color/white"
-                                    android:textSize="20dp" />
+                                    android:textSize="20sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -386,7 +386,7 @@
                     android:textStyle="bold"
                     android:text="0DH"
                     android:textColor="@color/reed"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -402,8 +402,9 @@
                 android:id="@+id/toAddactivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="290dp"
+                android:layout_marginStart="290dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:tint="@color/background"
                 app:backgroundTint="@color/background"
                 app:rippleColor="#46848C"
