@@ -115,7 +115,7 @@ public class GroupActions extends AppCompatActivity {
         Button deletebtn = (Button) findViewById(R.id.deleteg);
 
 
-       DatabaseReference groups = FirebaseDatabase.getInstance().getReference("Groups");
+        DatabaseReference groups = FirebaseDatabase.getInstance().getReference("Groups");
         DatabaseReference group_enrolments = FirebaseDatabase.getInstance().getReference("group_enrolments");
         DatabaseReference User_enrolments = FirebaseDatabase.getInstance().getReference("User_enrolments");
 
@@ -137,15 +137,14 @@ public class GroupActions extends AppCompatActivity {
 
                         if (Admin_value_db.equals(username)) {
 
-
-                            groups.child(groupid).removeValue();
                             User_enrolments.child( username).child(groupid).removeValue();
-                            group_enrolments.child( groupid).removeValue();
+                            group_enrolments.child(groupid).removeValue();
 
-                            Toast.makeText(GroupActions.this, "Group removed successfully  ! ", Toast.LENGTH_SHORT).show();
-                            Intent intent2 = new Intent(getApplicationContext(), Listegroup.class);
-                            startActivity(intent2);
 
+
+                            Toast.makeText(GroupActions.this, "You have successfully left the group ! ", Toast.LENGTH_SHORT).show();
+                            Intent intent3 = new Intent(getApplicationContext(), Listegroup.class);
+                            startActivity(intent3);
 
 
 
@@ -159,9 +158,6 @@ public class GroupActions extends AppCompatActivity {
 
                         }
 
-
-
-
                     }
 
                     @Override
@@ -169,62 +165,6 @@ public class GroupActions extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
-
-                // delete the group and its data
-                    /*     mDatabase.child(Id).child("Group Name").setValue(groupn);
-                mDatabase.child(Id).child("Description").setValue(des);
-                mDatabase.child(Id).child("Group Type").setValue(gtype);
-                mDatabase.child(Id).child("Group Admin").setValue(username); */
-
-
-                // the opposite of adding a group
-                   /* group_enrolments.child(id_).child( username).setValue("true");
-                    User_enrolments.child( username).child(id_).setValue("true");
-                    Toast.makeText(Groupinfo.this, "Group has been successfully joined ! ", Toast.LENGTH_SHORT).show();*/
-
-                    /*  delete from group enrelmts
-                    group_enrolments.child(Id).child(username).setValue("true");
-
-      */
-                    /*     To delete user enrolments 3adi
-                       User_enrolments.child("User_enrolments").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.hasChild(username)){
-                            //User_enrolments.child("User_enrolments").child(username).push().child(Id).setValue("true");
-                            Map<String,Object> taskMap = new HashMap<String,Object>();
-                            taskMap.put(Id, "true");
-                            User_enrolments.child("User_enrolments").child(username).updateChildren(taskMap);
-                        }else{
-                            User_enrolments.child("User_enrolments").child(username).child(Id).setValue("true");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });*/
-
-                //bouchbouk testing
-
-             /*   if(String.valueOf(username.equals(groupAdmin)).equals("true")){
-                    Toast.makeText(GroupActions.this, String.valueOf("you can"), Toast.LENGTH_SHORT).show();
-                    deletebtn.setEnabled(true);
-
-
-                }else{
-                    Toast.makeText(GroupActions.this, "machi nta admin" , Toast.LENGTH_SHORT).show();
-                        // delete member infos from db ;
-                    // the opposite of joining
-                    deletebtn.setEnabled(false);
-                    deletebtn.setText("Only For Group Admin");
-                }  */
-
 
             }
         });

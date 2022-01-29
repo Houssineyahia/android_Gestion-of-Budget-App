@@ -56,8 +56,6 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     app:srcCompat="@drawable/ic_baseline_content_copy_24" />
-
-
             </LinearLayout>
 
             <LinearLayout
