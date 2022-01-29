@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -30,8 +31,37 @@ public class EditProfil extends AppCompatActivity {
 
     public EditText Fname0, Lname0, Uname, Phone0,email0,Fname1,Lname1,Phone1,email1;
     private Button Edit_btn;
+    SessionManagement sessionManagement;
     DatabaseReference DBRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(EditProfil.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(EditProfil.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(EditProfil.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+    //--------------------------end here----------------------------------------------------//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +81,7 @@ public class EditProfil extends AppCompatActivity {
         email1 = findViewById(R.id.Email);
 
 
-        SessionManagement sessionManagement=new SessionManagement(EditProfil.this) ;
+         sessionManagement=new SessionManagement(EditProfil.this) ;
         String username = sessionManagement.getSession();
         Uname.setText(username);
 

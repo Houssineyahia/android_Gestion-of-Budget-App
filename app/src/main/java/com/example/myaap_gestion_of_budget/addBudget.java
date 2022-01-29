@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +38,39 @@ public class addBudget extends AppCompatActivity {
         // connection with database
     DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
     private  Intent intent = getIntent();
+    SessionManagement sessionManagement;
+
+
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(addBudget.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(addBudget.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(addBudget.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+//--------------------------end here----------------------------------------------------//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +100,9 @@ public class addBudget extends AppCompatActivity {
 
         String Id = mDatabase.push().getKey();
         SessionManagement sessionManagement=new SessionManagement(addBudget.this) ;
+
+
+
 
 
         add__budget.setOnClickListener(v -> {

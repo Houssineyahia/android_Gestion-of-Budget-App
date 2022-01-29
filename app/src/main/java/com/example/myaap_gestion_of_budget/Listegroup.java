@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -41,8 +42,37 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     ProgressDialog progress;
     private static final int RQ_CODE_EDITION = 1;
     Button bt;
+    SessionManagement sessionManagement;
 
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(Listegroup.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(Listegroup.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(Listegroup.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+//--------------------------end here----------------------------------------------------//
 
 
     @Override
@@ -140,7 +170,7 @@ public class Listegroup extends AppCompatActivity implements groupAdapter.groupV
     private  void HandlChangeListener(int position){
         liste.clear();
 
-        SessionManagement sessionManagement = new SessionManagement(this);
+         sessionManagement = new SessionManagement(this);
         String username = sessionManagement.getSession();
         databasereference.child("User_enrolments").child(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

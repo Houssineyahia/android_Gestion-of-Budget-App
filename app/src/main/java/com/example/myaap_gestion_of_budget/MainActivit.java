@@ -5,6 +5,8 @@ package com.example.myaap_gestion_of_budget;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myaap_gestion_of_budget.models.SessionManagement;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +33,37 @@ public class MainActivit extends AppCompatActivity {
     String groupname ;
     String admin ;
     String Idd ;
+    SessionManagement sessionManagement;
+
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(MainActivit.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(MainActivit.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(MainActivit.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+    //--------------------------end here----------------------------------------------------//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -33,15 +35,44 @@ public class Profil extends AppCompatActivity {
 
     private Button toedit;
     public TextView Full_name ,Fname, Lname, Uname, Phone,Email,Age;
+    SessionManagement sessionManagement;
 
 
     DatabaseReference DBRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myaapgestionofbudget-default-rtdb.firebaseio.com/");
+    //------------------menu top------------------------------------------------//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id=item.getItemId();
+        sessionManagement=new SessionManagement(Profil.this) ;
+        if(item_id==R.id.logout){
+            sessionManagement.removeSession();
+            Intent i = new Intent(Profil.this,Start.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            finish();
+
+        }
+
+        if (item_id==R.id.change_password){
+            Intent intent=new Intent(Profil.this,Edit_Passwd.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+    //--------------------------end here----------------------------------------------------//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        SessionManagement sessionManagement=new SessionManagement(Profil.this) ;
+         sessionManagement=new SessionManagement(Profil.this) ;
         String username = sessionManagement.getSession();
 
         toedit = findViewById(R.id.toedit);
