@@ -120,7 +120,7 @@ public class Edit_Passwd extends AppCompatActivity {
                             MyHashMap.put("passwordString",NewPasswd);
 
                             DBRef2.updateChildren(MyHashMap);
-                            Toast.makeText(Edit_Passwd.this, " ikhessa adak nsbadel lcode ghila ..awa sber 3afak  yat s yat", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Edit_Passwd.this, " password has been successfully changed !", Toast.LENGTH_SHORT).show();
 
 
 
