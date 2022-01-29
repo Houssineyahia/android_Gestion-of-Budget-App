@@ -77,7 +77,7 @@ public class Dashboard extends AppCompatActivity  {
         }
 
         if (item_id==R.id.change_password){
-            Intent intent=new Intent(Dashboard.this,ChnagePassword.class);
+            Intent intent=new Intent(Dashboard.this,Edit_Passwd.class);
             startActivity(intent);
         }
         return true;
