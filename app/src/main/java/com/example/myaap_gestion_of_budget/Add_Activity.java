@@ -115,8 +115,7 @@ public class Add_Activity extends AppCompatActivity {
                         dropdwon.getText().clear();
                         txt1.getText().clear();
                         Toast.makeText(Add_Activity.this, "Activity saved !", Toast.LENGTH_SHORT).show();
-                        Intent g=new Intent(Add_Activity.this,Dashboard.class);
-                        startActivity(g);
+
                     }
                 });
 
