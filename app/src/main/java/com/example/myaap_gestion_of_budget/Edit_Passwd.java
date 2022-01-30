@@ -74,7 +74,7 @@ public class Edit_Passwd extends AppCompatActivity {
 
         Conf_new_passwd = findViewById(R.id.Conf_new_passwd);
         Edit_passwd_btn = findViewById(R.id.Edit_passwd_btn);
-        textView = findViewById(R.id.TextV1);
+       
         mAuth = FirebaseAuth.getInstance();
        sessionManagement=new SessionManagement(Edit_Passwd.this) ;
         String username = sessionManagement.getSession();
@@ -98,7 +98,7 @@ public class Edit_Passwd extends AppCompatActivity {
 
                         //Testing_Example OOook
                         String password_db = snapshot.getValue().toString();
-                        textView.setText(password_db);
+                       
 
 
 
