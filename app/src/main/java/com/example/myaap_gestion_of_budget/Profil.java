@@ -149,7 +149,7 @@ public class Profil extends AppCompatActivity {
                     Lname.setText(Lname1_db);
                     Phone.setText(Phone_db);
                     Email.setText(Email_db);
-                    //Age.setText(String.valueOf());
+                    Age.setText(Age_db);
 
 
                 }
