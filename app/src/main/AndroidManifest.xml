@@ -48,6 +48,9 @@
         <activity
             android:name=".Profil"
             android:exported="true" />
+        <activity
+            android:name=".Edit_Passwd"
+            android:exported="true" />
 
         <activity android:name=".Add_Activity"
             android:exported="true"/>

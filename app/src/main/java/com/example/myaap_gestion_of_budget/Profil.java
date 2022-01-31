@@ -72,11 +72,10 @@ public class Profil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-         sessionManagement=new SessionManagement(Profil.this) ;
+        sessionManagement=new SessionManagement(Profil.this) ;
         String username = sessionManagement.getSession();
 
         toedit = findViewById(R.id.toedit);
-
 
         Full_name = findViewById(R.id.Full_name);
         Fname = findViewById(R.id.Fname);
@@ -170,10 +169,6 @@ public class Profil extends AppCompatActivity {
                 startActivity(otherActivity);
 
             }});
-
-
-
-
 
 
 
